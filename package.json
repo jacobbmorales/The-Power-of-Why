@@ -1,7 +1,7 @@
 {
   "name": "the-power-of-why",
   "version": "1.0.0",
-  "description": "This app is inspired by the documentary The Power of Tem.",
+  "description": "This app is inspired by the documentary The Power of Ten.",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
