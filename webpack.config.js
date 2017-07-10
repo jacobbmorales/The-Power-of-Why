@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var $ = require ('jquery')
 module.exports = {
     entry: {
         main: "./app/static/scripts/jsx/main.js",

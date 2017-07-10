@@ -61,7 +61,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 483);
+/******/ 	return __webpack_require__(__webpack_require__.s = 487);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -257,366 +257,7 @@ process.umask = function() { return 0; };
 
 /***/ },
 
-/***/ 107:
-/***/ function(module, exports) {
-
-"use strict";
-/*! @license Firebase v4.1.3
-Build: rev-1234895
-Terms: https://firebase.google.com/terms/ */
-
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-exports.isDef = isDef;
-exports.isJustDef = isJustDef;
-exports.isFunction = isFunction;
-exports.isObject = isObject;
-exports.isNonNullObject = isNonNullObject;
-exports.isNonArrayObject = isNonArrayObject;
-exports.isString = isString;
-exports.isNumber = isNumber;
-exports.isNativeBlob = isNativeBlob;
-exports.isNativeBlobDefined = isNativeBlobDefined;
-/**
-* Copyright 2017 Google Inc.
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*   http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
-/**
- * @return False if the object is undefined or null, true otherwise.
- */
-/**
-* Copyright 2017 Google Inc.
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*   http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/function isDef(p) {
-    return p != null;
-}
-function isJustDef(p) {
-    return p !== void 0;
-}
-function isFunction(p) {
-    return typeof p === 'function';
-}
-function isObject(p) {
-    return (typeof p === 'undefined' ? 'undefined' : _typeof(p)) === 'object';
-}
-function isNonNullObject(p) {
-    return isObject(p) && p !== null;
-}
-function isNonArrayObject(p) {
-    return isObject(p) && !Array.isArray(p);
-}
-function isString(p) {
-    return typeof p === 'string' || p instanceof String;
-}
-function isNumber(p) {
-    return typeof p === 'number' || p instanceof Number;
-}
-function isNativeBlob(p) {
-    return isNativeBlobDefined() && p instanceof Blob;
-}
-function isNativeBlobDefined() {
-    return typeof Blob !== 'undefined';
-}
-//# sourceMappingURL=type.js.map
-
-
-/***/ },
-
-/***/ 162:
-/***/ function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() { return this; })();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ },
-
-/***/ 167:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/*! @license Firebase v4.1.3
-Build: rev-1234895
-Terms: https://firebase.google.com/terms/ */
-
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.Code = exports.errors = exports.FirebaseStorageError = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * Copyright 2017 Google Inc.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     *
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * Licensed under the Apache License, Version 2.0 (the "License");
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * you may not use this file except in compliance with the License.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * You may obtain a copy of the License at
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     *
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     *   http://www.apache.org/licenses/LICENSE-2.0
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     *
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * Unless required by applicable law or agreed to in writing, software
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * distributed under the License is distributed on an "AS IS" BASIS,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * See the License for the specific language governing permissions and
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * limitations under the License.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     */
-
-
-exports.prependCode = prependCode;
-exports.unknown = unknown;
-exports.objectNotFound = objectNotFound;
-exports.bucketNotFound = bucketNotFound;
-exports.projectNotFound = projectNotFound;
-exports.quotaExceeded = quotaExceeded;
-exports.unauthenticated = unauthenticated;
-exports.unauthorized = unauthorized;
-exports.retryLimitExceeded = retryLimitExceeded;
-exports.invalidChecksum = invalidChecksum;
-exports.canceled = canceled;
-exports.invalidEventName = invalidEventName;
-exports.invalidUrl = invalidUrl;
-exports.invalidDefaultBucket = invalidDefaultBucket;
-exports.noDefaultBucket = noDefaultBucket;
-exports.cannotSliceBlob = cannotSliceBlob;
-exports.serverFileWrongSize = serverFileWrongSize;
-exports.noDownloadURL = noDownloadURL;
-exports.invalidArgument = invalidArgument;
-exports.invalidArgumentCount = invalidArgumentCount;
-exports.appDeleted = appDeleted;
-exports.invalidRootOperation = invalidRootOperation;
-exports.invalidFormat = invalidFormat;
-exports.internalError = internalError;
-
-var _constants = __webpack_require__(397);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var FirebaseStorageError = exports.FirebaseStorageError = function () {
-    function FirebaseStorageError(code, message) {
-        _classCallCheck(this, FirebaseStorageError);
-
-        this.code_ = prependCode(code);
-        this.message_ = 'Firebase Storage: ' + message;
-        this.serverResponse_ = null;
-        this.name_ = 'FirebaseError';
-    }
-
-    _createClass(FirebaseStorageError, [{
-        key: 'codeProp',
-        value: function codeProp() {
-            return this.code;
-        }
-    }, {
-        key: 'codeEquals',
-        value: function codeEquals(code) {
-            return prependCode(code) === this.codeProp();
-        }
-    }, {
-        key: 'serverResponseProp',
-        value: function serverResponseProp() {
-            return this.serverResponse_;
-        }
-    }, {
-        key: 'setServerResponseProp',
-        value: function setServerResponseProp(serverResponse) {
-            this.serverResponse_ = serverResponse;
-        }
-    }, {
-        key: 'name',
-        get: function get() {
-            return this.name_;
-        }
-    }, {
-        key: 'code',
-        get: function get() {
-            return this.code_;
-        }
-    }, {
-        key: 'message',
-        get: function get() {
-            return this.message_;
-        }
-    }, {
-        key: 'serverResponse',
-        get: function get() {
-            return this.serverResponse_;
-        }
-    }]);
-
-    return FirebaseStorageError;
-}();
-
-var errors = exports.errors = {};
-var Code = exports.Code = {
-    // Shared between all platforms
-    UNKNOWN: 'unknown',
-    OBJECT_NOT_FOUND: 'object-not-found',
-    BUCKET_NOT_FOUND: 'bucket-not-found',
-    PROJECT_NOT_FOUND: 'project-not-found',
-    QUOTA_EXCEEDED: 'quota-exceeded',
-    UNAUTHENTICATED: 'unauthenticated',
-    UNAUTHORIZED: 'unauthorized',
-    RETRY_LIMIT_EXCEEDED: 'retry-limit-exceeded',
-    INVALID_CHECKSUM: 'invalid-checksum',
-    CANCELED: 'canceled',
-    // JS specific
-    INVALID_EVENT_NAME: 'invalid-event-name',
-    INVALID_URL: 'invalid-url',
-    INVALID_DEFAULT_BUCKET: 'invalid-default-bucket',
-    NO_DEFAULT_BUCKET: 'no-default-bucket',
-    CANNOT_SLICE_BLOB: 'cannot-slice-blob',
-    SERVER_FILE_WRONG_SIZE: 'server-file-wrong-size',
-    NO_DOWNLOAD_URL: 'no-download-url',
-    INVALID_ARGUMENT: 'invalid-argument',
-    INVALID_ARGUMENT_COUNT: 'invalid-argument-count',
-    APP_DELETED: 'app-deleted',
-    INVALID_ROOT_OPERATION: 'invalid-root-operation',
-    INVALID_FORMAT: 'invalid-format',
-    INTERNAL_ERROR: 'internal-error'
-};
-function prependCode(code) {
-    return 'storage/' + code;
-}
-function unknown() {
-    return new FirebaseStorageError(Code.UNKNOWN, 'An unknown error occurred, please check the error payload for ' + 'server response.');
-}
-function objectNotFound(path) {
-    return new FirebaseStorageError(Code.OBJECT_NOT_FOUND, 'Object \'' + path + '\' does not exist.');
-}
-function bucketNotFound(bucket) {
-    return new FirebaseStorageError(Code.BUCKET_NOT_FOUND, 'Bucket \'' + bucket + '\' does not exist.');
-}
-function projectNotFound(project) {
-    return new FirebaseStorageError(Code.PROJECT_NOT_FOUND, 'Project \'' + project + '\' does not exist.');
-}
-function quotaExceeded(bucket) {
-    return new FirebaseStorageError(Code.QUOTA_EXCEEDED, 'Quota for bucket \'' + bucket + '\' exceeded, please view quota on ' + 'https://firebase.google.com/pricing/.');
-}
-function unauthenticated() {
-    return new FirebaseStorageError(Code.UNAUTHENTICATED, 'User is not authenticated, please authenticate using Firebase ' + 'Authentication and try again.');
-}
-function unauthorized(path) {
-    return new FirebaseStorageError(Code.UNAUTHORIZED, 'User does not have permission to access \'' + path + '\'.');
-}
-function retryLimitExceeded() {
-    return new FirebaseStorageError(Code.RETRY_LIMIT_EXCEEDED, 'Max retry time for operation exceeded, please try again.');
-}
-function invalidChecksum(path, checksum, calculated) {
-    return new FirebaseStorageError(Code.INVALID_CHECKSUM, 'Uploaded/downloaded object \'' + path + '\' has checksum \'' + checksum + '\' which does not match \'' + calculated + '\'. Please retry the upload/download.');
-}
-function canceled() {
-    return new FirebaseStorageError(Code.CANCELED, 'User canceled the upload/download.');
-}
-function invalidEventName(name) {
-    return new FirebaseStorageError(Code.INVALID_EVENT_NAME, 'Invalid event name \'' + name + '\'.');
-}
-function invalidUrl(url) {
-    return new FirebaseStorageError(Code.INVALID_URL, 'Invalid URL \'' + url + '\'.');
-}
-function invalidDefaultBucket(bucket) {
-    return new FirebaseStorageError(Code.INVALID_DEFAULT_BUCKET, 'Invalid default bucket \'' + bucket + '\'.');
-}
-function noDefaultBucket() {
-    return new FirebaseStorageError(Code.NO_DEFAULT_BUCKET, 'No default bucket ' + 'found. Did you set the \'' + _constants.configOption + '\' property when initializing the app?');
-}
-function cannotSliceBlob() {
-    return new FirebaseStorageError(Code.CANNOT_SLICE_BLOB, 'Cannot slice blob for upload. Please retry the upload.');
-}
-function serverFileWrongSize() {
-    return new FirebaseStorageError(Code.SERVER_FILE_WRONG_SIZE, 'Server recorded incorrect upload file size, please retry the upload.');
-}
-function noDownloadURL() {
-    return new FirebaseStorageError(Code.NO_DOWNLOAD_URL, 'The given file does not have any download URLs.');
-}
-function invalidArgument(index, fnName, message) {
-    return new FirebaseStorageError(Code.INVALID_ARGUMENT, 'Invalid argument in `' + fnName + '` at index ' + index + ': ' + message);
-}
-function invalidArgumentCount(argMin, argMax, fnName, real) {
-    var countPart = void 0;
-    var plural = void 0;
-    if (argMin === argMax) {
-        countPart = argMin;
-        plural = argMin === 1 ? 'argument' : 'arguments';
-    } else {
-        countPart = 'between ' + argMin + ' and ' + argMax;
-        plural = 'arguments';
-    }
-    return new FirebaseStorageError(Code.INVALID_ARGUMENT_COUNT, 'Invalid argument count in `' + fnName + '`: Expected ' + countPart + ' ' + plural + ', received ' + real + '.');
-}
-function appDeleted() {
-    return new FirebaseStorageError(Code.APP_DELETED, 'The Firebase app was deleted.');
-}
-/**
- * @param name The name of the operation that was invalid.
- */
-function invalidRootOperation(name) {
-    return new FirebaseStorageError(Code.INVALID_ROOT_OPERATION, 'The operation \'' + name + '\' cannot be performed on a root reference, create a non-root ' + 'reference using child, such as .child(\'file.png\').');
-}
-/**
- * @param format The format that was not valid.
- * @param message A message describing the format violation.
- */
-function invalidFormat(format, message) {
-    return new FirebaseStorageError(Code.INVALID_FORMAT, 'String does not match format \'' + format + '\': ' + message);
-}
-/**
- * @param message A message describing the internal error.
- */
-function internalError(message) {
-    throw new FirebaseStorageError(Code.INTERNAL_ERROR, 'Internal error: ' + message);
-}
-//# sourceMappingURL=error.js.map
-
-
-/***/ },
-
-/***/ 242:
+/***/ 109:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -633,7 +274,7 @@ exports.make = make;
 exports.resolve = resolve;
 exports.reject = reject;
 
-var _shared_promise = __webpack_require__(400);
+var _shared_promise = __webpack_require__(371);
 
 function make(resolver) {
   return new _shared_promise.local.Promise(resolver);
@@ -676,7 +317,33 @@ function reject(error) {
 
 /***/ },
 
-/***/ 381:
+/***/ 110:
+/***/ function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() { return this; })();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ },
+
+/***/ 162:
 /***/ function(module, exports) {
 
 "use strict";
@@ -749,7 +416,7 @@ function clone(obj) {
 
 /***/ },
 
-/***/ 382:
+/***/ 167:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -763,7 +430,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _firebase_app = __webpack_require__(435);
+var _firebase_app = __webpack_require__(420);
 
 // Export a single instance of firebase app
 var firebase = (0, _firebase_app.createFirebaseNamespace)(); /**
@@ -789,7 +456,7 @@ module.exports = exports['default'];
 
 /***/ },
 
-/***/ 396:
+/***/ 239:
 /***/ function(module, exports) {
 
 "use strict";
@@ -868,7 +535,7 @@ module.exports = exports['default'];
 
 /***/ },
 
-/***/ 397:
+/***/ 240:
 /***/ function(module, exports) {
 
 "use strict";
@@ -956,7 +623,7 @@ var minSafeInteger = exports.minSafeInteger = -9007199254740991;
 
 /***/ },
 
-/***/ 398:
+/***/ 241:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -992,7 +659,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
  */
 
 
-var _error = __webpack_require__(167);
+var _error = __webpack_require__(84);
 
 var errorsExports = _interopRequireWildcard(_error);
 
@@ -1090,7 +757,7 @@ var Location = exports.Location = function () {
 
 /***/ },
 
-/***/ 399:
+/***/ 370:
 /***/ function(module, exports) {
 
 "use strict";
@@ -1198,7 +865,7 @@ var ErrorFactory = exports.ErrorFactory = function () {
 
 /***/ },
 
-/***/ 400:
+/***/ 371:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1238,18 +905,18 @@ if (typeof global !== 'undefined') {
         throw new Error('polyfill failed because global object is unavailable in this environment');
     }
 }
-var PromiseImpl = scope.Promise || __webpack_require__(444);
+var PromiseImpl = scope.Promise || __webpack_require__(429);
 var local = exports.local = {
     Promise: PromiseImpl,
     GoogPromise: PromiseImpl
 };
 //# sourceMappingURL=shared_promise.js.map
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(162)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(110)))
 
 /***/ },
 
-/***/ 401:
+/***/ 372:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1272,15 +939,15 @@ exports.nonNegativeNumberSpec = nonNegativeNumberSpec;
 exports.looseObjectSpec = looseObjectSpec;
 exports.nullFunctionSpec = nullFunctionSpec;
 
-var _error = __webpack_require__(167);
+var _error = __webpack_require__(84);
 
 var errorsExports = _interopRequireWildcard(_error);
 
-var _metadata = __webpack_require__(403);
+var _metadata = __webpack_require__(374);
 
 var MetadataUtils = _interopRequireWildcard(_metadata);
 
-var _type = __webpack_require__(107);
+var _type = __webpack_require__(56);
 
 var type = _interopRequireWildcard(_type);
 
@@ -1414,7 +1081,7 @@ function nullFunctionSpec(opt_optional) {
 
 /***/ },
 
-/***/ 402:
+/***/ 373:
 /***/ function(module, exports) {
 
 "use strict";
@@ -1489,7 +1156,7 @@ function remove(array, elem) {
 
 /***/ },
 
-/***/ 403:
+/***/ 374:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1512,21 +1179,21 @@ exports.fromResourceString = fromResourceString;
 exports.toResourceString = toResourceString;
 exports.metadataValidator = metadataValidator;
 
-var _json = __webpack_require__(451);
+var _json = __webpack_require__(436);
 
 var json = _interopRequireWildcard(_json);
 
-var _location = __webpack_require__(398);
+var _location = __webpack_require__(241);
 
-var _path = __webpack_require__(419);
+var _path = __webpack_require__(400);
 
 var path = _interopRequireWildcard(_path);
 
-var _type = __webpack_require__(107);
+var _type = __webpack_require__(56);
 
 var type = _interopRequireWildcard(_type);
 
-var _url = __webpack_require__(405);
+var _url = __webpack_require__(376);
 
 var UrlUtils = _interopRequireWildcard(_url);
 
@@ -1700,7 +1367,7 @@ function metadataValidator(p) {
 
 /***/ },
 
-/***/ 404:
+/***/ 375:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1722,7 +1389,7 @@ exports.base64Bytes_ = base64Bytes_;
 exports.dataURLBytes_ = dataURLBytes_;
 exports.dataURLContentType_ = dataURLContentType_;
 
-var _error = __webpack_require__(167);
+var _error = __webpack_require__(84);
 
 var errorsExports = _interopRequireWildcard(_error);
 
@@ -1911,7 +1578,7 @@ function endsWith(s, end) {
 
 /***/ },
 
-/***/ 405:
+/***/ 376:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1929,11 +1596,11 @@ exports.makeDownloadUrl = makeDownloadUrl;
 exports.makeUploadUrl = makeUploadUrl;
 exports.makeQueryString = makeQueryString;
 
-var _constants = __webpack_require__(397);
+var _constants = __webpack_require__(240);
 
 var constants = _interopRequireWildcard(_constants);
 
-var _object = __webpack_require__(381);
+var _object = __webpack_require__(162);
 
 var object = _interopRequireWildcard(_object);
 
@@ -1982,7 +1649,7 @@ function makeQueryString(params) {
 
 /***/ },
 
-/***/ 412:
+/***/ 393:
 /***/ function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(0).nextTick;
@@ -2061,11 +1728,11 @@ exports.setImmediate = typeof setImmediate === "function" ? setImmediate : funct
 exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
   delete immediateIds[id];
 };
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(412).setImmediate, __webpack_require__(412).clearImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(393).setImmediate, __webpack_require__(393).clearImmediate))
 
 /***/ },
 
-/***/ 413:
+/***/ 394:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2086,7 +1753,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 exports.createSubscribe = createSubscribe;
 exports.async = async;
 
-var _shared_promise = __webpack_require__(400);
+var _shared_promise = __webpack_require__(371);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -2351,7 +2018,7 @@ function noop() {
 
 /***/ },
 
-/***/ 414:
+/***/ 395:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2382,17 +2049,17 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _errors = __webpack_require__(399);
+var _errors = __webpack_require__(370);
 
-var _errors2 = __webpack_require__(396);
+var _errors2 = __webpack_require__(239);
 
 var _errors3 = _interopRequireDefault(_errors2);
 
-var _tokenManager = __webpack_require__(443);
+var _tokenManager = __webpack_require__(428);
 
 var _tokenManager2 = _interopRequireDefault(_tokenManager);
 
-var _notificationPermission = __webpack_require__(416);
+var _notificationPermission = __webpack_require__(397);
 
 var _notificationPermission2 = _interopRequireDefault(_notificationPermission);
 
@@ -2592,7 +2259,7 @@ module.exports = exports['default'];
 
 /***/ },
 
-/***/ 415:
+/***/ 396:
 /***/ function(module, exports) {
 
 "use strict";
@@ -2636,7 +2303,7 @@ module.exports = exports['default'];
 
 /***/ },
 
-/***/ 416:
+/***/ 397:
 /***/ function(module, exports) {
 
 "use strict";
@@ -2675,7 +2342,7 @@ module.exports = exports['default'];
 
 /***/ },
 
-/***/ 417:
+/***/ 398:
 /***/ function(module, exports) {
 
 "use strict";
@@ -2735,7 +2402,7 @@ module.exports = exports['default'];
 
 /***/ },
 
-/***/ 418:
+/***/ 399:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2772,15 +2439,15 @@ var _createClass = function () { function defineProperties(target, props) { for 
  */
 
 
-var _fs = __webpack_require__(450);
+var _fs = __webpack_require__(435);
 
 var fs = _interopRequireWildcard(_fs);
 
-var _string = __webpack_require__(404);
+var _string = __webpack_require__(375);
 
 var string = _interopRequireWildcard(_string);
 
-var _type = __webpack_require__(107);
+var _type = __webpack_require__(56);
 
 var type = _interopRequireWildcard(_type);
 
@@ -2902,7 +2569,7 @@ var FbsBlob = exports.FbsBlob = function () {
 
 /***/ },
 
-/***/ 419:
+/***/ 400:
 /***/ function(module, exports) {
 
 "use strict";
@@ -2993,7 +2660,7 @@ function lastComponent(path) {
 
 /***/ },
 
-/***/ 420:
+/***/ 401:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3022,31 +2689,31 @@ exports.createResumableUpload = createResumableUpload;
 exports.getResumableUploadStatus = getResumableUploadStatus;
 exports.continueResumableUpload = continueResumableUpload;
 
-var _array = __webpack_require__(402);
+var _array = __webpack_require__(373);
 
 var array = _interopRequireWildcard(_array);
 
-var _blob = __webpack_require__(418);
+var _blob = __webpack_require__(399);
 
-var _error = __webpack_require__(167);
+var _error = __webpack_require__(84);
 
 var errorsExports = _interopRequireWildcard(_error);
 
-var _metadata = __webpack_require__(403);
+var _metadata = __webpack_require__(374);
 
 var MetadataUtils = _interopRequireWildcard(_metadata);
 
-var _object = __webpack_require__(381);
+var _object = __webpack_require__(162);
 
 var object = _interopRequireWildcard(_object);
 
-var _requestinfo = __webpack_require__(454);
+var _requestinfo = __webpack_require__(439);
 
-var _type = __webpack_require__(107);
+var _type = __webpack_require__(56);
 
 var type = _interopRequireWildcard(_type);
 
-var _url = __webpack_require__(405);
+var _url = __webpack_require__(376);
 
 var UrlUtils = _interopRequireWildcard(_url);
 
@@ -3348,7 +3015,7 @@ function continueResumableUpload(location, authWrapper, url, blob, chunkSize, ma
 
 /***/ },
 
-/***/ 421:
+/***/ 402:
 /***/ function(module, exports) {
 
 "use strict";
@@ -3426,7 +3093,7 @@ function taskStateFromInternalTaskState(state) {
 
 /***/ },
 
-/***/ 422:
+/***/ 403:
 /***/ function(module, exports) {
 
 "use strict";
@@ -3468,7 +3135,7 @@ var ErrorCode = exports.ErrorCode = undefined;
 
 /***/ },
 
-/***/ 423:
+/***/ 404:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3503,43 +3170,43 @@ var _createClass = function () { function defineProperties(target, props) { for 
  */
 
 
-var _args = __webpack_require__(401);
+var _args = __webpack_require__(372);
 
 var args = _interopRequireWildcard(_args);
 
-var _blob = __webpack_require__(418);
+var _blob = __webpack_require__(399);
 
-var _error = __webpack_require__(167);
+var _error = __webpack_require__(84);
 
 var errorsExports = _interopRequireWildcard(_error);
 
-var _location = __webpack_require__(398);
+var _location = __webpack_require__(241);
 
-var _metadata = __webpack_require__(403);
+var _metadata = __webpack_require__(374);
 
 var metadata = _interopRequireWildcard(_metadata);
 
-var _object = __webpack_require__(381);
+var _object = __webpack_require__(162);
 
 var object = _interopRequireWildcard(_object);
 
-var _path = __webpack_require__(419);
+var _path = __webpack_require__(400);
 
 var path = _interopRequireWildcard(_path);
 
-var _requests = __webpack_require__(420);
+var _requests = __webpack_require__(401);
 
 var requests = _interopRequireWildcard(_requests);
 
-var _string = __webpack_require__(404);
+var _string = __webpack_require__(375);
 
 var fbsString = _interopRequireWildcard(_string);
 
-var _type = __webpack_require__(107);
+var _type = __webpack_require__(56);
 
 var type = _interopRequireWildcard(_type);
 
-var _task = __webpack_require__(459);
+var _task = __webpack_require__(444);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -3778,7 +3445,7 @@ var Reference = exports.Reference = function () {
 
 /***/ },
 
-/***/ 428:
+/***/ 418:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3792,22 +3459,22 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _app = __webpack_require__(382);
+var _app = __webpack_require__(167);
 
 var _app2 = _interopRequireDefault(_app);
 
-__webpack_require__(436);
+__webpack_require__(421);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Import instance of FirebaseApp from ./app
 var Storage, XMLHttpRequest;
 
-__webpack_require__(437);
-__webpack_require__(445);
+__webpack_require__(422);
+__webpack_require__(430);
 var AsyncStorage;
 
-__webpack_require__(438);
+__webpack_require__(423);
 // Export the single instance of firebase
 exports.default = _app2.default;
 module.exports = exports['default'];
@@ -3816,7 +3483,7 @@ module.exports = exports['default'];
 
 /***/ },
 
-/***/ 434:
+/***/ 419:
 /***/ function(module, exports) {
 
 "use strict";
@@ -3919,7 +3586,7 @@ function patchProperty(obj, prop, value) {
 
 /***/ },
 
-/***/ 435:
+/***/ 420:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3952,13 +3619,13 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 exports.createFirebaseNamespace = createFirebaseNamespace;
 
-var _subscribe = __webpack_require__(413);
+var _subscribe = __webpack_require__(394);
 
-var _errors = __webpack_require__(399);
+var _errors = __webpack_require__(370);
 
-var _shared_promise = __webpack_require__(400);
+var _shared_promise = __webpack_require__(371);
 
-var _deep_copy = __webpack_require__(434);
+var _deep_copy = __webpack_require__(419);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -4326,14 +3993,14 @@ var appErrors = new _errors.ErrorFactory('app', 'Firebase', errors);
 
 /***/ },
 
-/***/ 436:
+/***/ 421:
 /***/ function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/*! @license Firebase v4.1.3
 Build: rev-1234895
 Terms: https://firebase.google.com/terms/ */
 
-var firebase = __webpack_require__(382);
+var firebase = __webpack_require__(167);
 (function(){(function(){var h,aa=aa||{},k=this,m=function(a){return void 0!==a},p=function(a){return"string"==typeof a},ba=function(a){return"boolean"==typeof a},ca=function(a){return"number"==typeof a},da=function(){},ea=function(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return"array";if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if("[object Window]"==c)return"object";if("[object Array]"==c||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=typeof a.propertyIsEnumerable&&
 !a.propertyIsEnumerable("splice"))return"array";if("[object Function]"==c||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("call"))return"function"}else return"null";else if("function"==b&&"undefined"==typeof a.call)return"object";return b},fa=function(a){return null===a},ga=function(a){return"array"==ea(a)},ha=function(a){var b=ea(a);return"array"==b||"object"==b&&"number"==typeof a.length},q=function(a){return"function"==ea(a)},r=function(a){var b=
 typeof a;return"object"==b&&null!=a||"function"==b},ia=function(a,b,c){return a.call.apply(a.bind,arguments)},ja=function(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var c=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(c,d);return a.apply(b,c)}}return function(){return a.apply(b,arguments)}},t=function(a,b,c){t=Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?ia:ja;return t.apply(null,
@@ -4607,11 +4274,11 @@ Y(Fg.prototype,{verifyPhoneNumber:{name:"verifyPhoneNumber",a:[V("phoneNumber"),
 (function(){if("undefined"!==typeof firebase&&firebase.INTERNAL&&firebase.INTERNAL.registerService){var a={Auth:T,Error:N};Z(a,"EmailAuthProvider",Ag,[]);Z(a,"FacebookAuthProvider",pg,[]);Z(a,"GithubAuthProvider",rg,[]);Z(a,"GoogleAuthProvider",tg,[]);Z(a,"TwitterAuthProvider",vg,[]);Z(a,"OAuthProvider",P,[V("providerId")]);Z(a,"PhoneAuthProvider",Fg,[vk()]);Z(a,"RecaptchaVerifier",Uh,[X(V(),uk(),"recaptchaContainer"),W("recaptchaParameters",!0),wk()]);firebase.INTERNAL.registerService("auth",function(a,
 c){a=new T(a);c({INTERNAL:{getUid:t(a.getUid,a),getToken:t(a.bf,a),addAuthTokenListener:t(a.Le,a),removeAuthTokenListener:t(a.Ff,a)}});return a},a,function(a,c){if("create"===a)try{c.auth()}catch(d){}});firebase.INTERNAL.extendNamespace({User:S})}else throw Error("Cannot find the firebase namespace; be sure to include firebase-app.js before this library.");})();}).call(this);
 }).call(typeof global !== undefined ? global : typeof self !== undefined ? self : typeof window !== undefined ? window : {});
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(162)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(110)))
 
 /***/ },
 
-/***/ 437:
+/***/ 422:
 /***/ function(module, exports, __webpack_require__) {
 
 /*! @license Firebase v4.1.3
@@ -4642,7 +4309,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE. */
 
 (function() {
-            var firebase = __webpack_require__(382);
+            var firebase = __webpack_require__(167);
             var g,aa=this;function n(a){return void 0!==a}function ba(){}function ca(a){a.Vb=function(){return a.Ye?a.Ye:a.Ye=new a}}
 function da(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return"array";if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if("[object Window]"==c)return"object";if("[object Array]"==c||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("splice"))return"array";if("[object Function]"==c||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("call"))return"function"}else return"null";
 else if("function"==b&&"undefined"==typeof a.call)return"object";return b}function ea(a){return"array"==da(a)}function fa(a){var b=da(a);return"array"==b||"object"==b&&"number"==typeof a.length}function p(a){return"string"==typeof a}function ga(a){return"number"==typeof a}function ha(a){return"function"==da(a)}function ia(a){var b=typeof a;return"object"==b&&null!=a||"function"==b}function ja(a,b,c){return a.call.apply(a.bind,arguments)}
@@ -4883,7 +4550,7 @@ d;return d.Ya},{Reference:U,Query:X,Database:Pg,enableLogging:Sb,INTERNAL:Z,TEST
 
 /***/ },
 
-/***/ 438:
+/***/ 423:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4913,15 +4580,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.registerMessaging = registerMessaging;
 
-var _windowController = __webpack_require__(440);
+var _windowController = __webpack_require__(425);
 
 var _windowController2 = _interopRequireDefault(_windowController);
 
-var _swController = __webpack_require__(439);
+var _swController = __webpack_require__(424);
 
 var _swController2 = _interopRequireDefault(_swController);
 
-var _app = __webpack_require__(382);
+var _app = __webpack_require__(167);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -4945,7 +4612,7 @@ registerMessaging(_app2.default);
 
 /***/ },
 
-/***/ 439:
+/***/ 424:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4978,19 +4645,19 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _controllerInterface = __webpack_require__(414);
+var _controllerInterface = __webpack_require__(395);
 
 var _controllerInterface2 = _interopRequireDefault(_controllerInterface);
 
-var _errors = __webpack_require__(396);
+var _errors = __webpack_require__(239);
 
 var _errors2 = _interopRequireDefault(_errors);
 
-var _workerPageMessage = __webpack_require__(417);
+var _workerPageMessage = __webpack_require__(398);
 
 var _workerPageMessage2 = _interopRequireDefault(_workerPageMessage);
 
-var _fcmDetails = __webpack_require__(415);
+var _fcmDetails = __webpack_require__(396);
 
 var _fcmDetails2 = _interopRequireDefault(_fcmDetails);
 
@@ -5324,7 +4991,7 @@ module.exports = exports['default'];
 
 /***/ },
 
-/***/ 440:
+/***/ 425:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5357,27 +5024,27 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
-var _controllerInterface = __webpack_require__(414);
+var _controllerInterface = __webpack_require__(395);
 
 var _controllerInterface2 = _interopRequireDefault(_controllerInterface);
 
-var _errors = __webpack_require__(396);
+var _errors = __webpack_require__(239);
 
 var _errors2 = _interopRequireDefault(_errors);
 
-var _workerPageMessage = __webpack_require__(417);
+var _workerPageMessage = __webpack_require__(398);
 
 var _workerPageMessage2 = _interopRequireDefault(_workerPageMessage);
 
-var _defaultSw = __webpack_require__(442);
+var _defaultSw = __webpack_require__(427);
 
 var _defaultSw2 = _interopRequireDefault(_defaultSw);
 
-var _notificationPermission = __webpack_require__(416);
+var _notificationPermission = __webpack_require__(397);
 
 var _notificationPermission2 = _interopRequireDefault(_notificationPermission);
 
-var _subscribe = __webpack_require__(413);
+var _subscribe = __webpack_require__(394);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5726,7 +5393,7 @@ module.exports = exports['default'];
 
 /***/ },
 
-/***/ 441:
+/***/ 426:
 /***/ function(module, exports) {
 
 "use strict";
@@ -5770,7 +5437,7 @@ module.exports = exports['default'];
 
 /***/ },
 
-/***/ 442:
+/***/ 427:
 /***/ function(module, exports) {
 
 "use strict";
@@ -5808,7 +5475,7 @@ module.exports = exports['default'];
 
 /***/ },
 
-/***/ 443:
+/***/ 428:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5839,17 +5506,17 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _errors = __webpack_require__(399);
+var _errors = __webpack_require__(370);
 
-var _errors2 = __webpack_require__(396);
+var _errors2 = __webpack_require__(239);
 
 var _errors3 = _interopRequireDefault(_errors2);
 
-var _arrayBufferToBase = __webpack_require__(441);
+var _arrayBufferToBase = __webpack_require__(426);
 
 var _arrayBufferToBase2 = _interopRequireDefault(_arrayBufferToBase);
 
-var _fcmDetails = __webpack_require__(415);
+var _fcmDetails = __webpack_require__(396);
 
 var _fcmDetails2 = _interopRequireDefault(_fcmDetails);
 
@@ -6231,7 +5898,7 @@ module.exports = exports['default'];
 
 /***/ },
 
-/***/ 444:
+/***/ 429:
 /***/ function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(setImmediate) {(function (root) {
@@ -6468,11 +6135,11 @@ module.exports = exports['default'];
 
 })(this);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(412).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(393).setImmediate))
 
 /***/ },
 
-/***/ 445:
+/***/ 430:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6487,17 +6154,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.registerStorage = registerStorage;
 
-var _string = __webpack_require__(404);
+var _string = __webpack_require__(375);
 
-var _taskenums = __webpack_require__(421);
+var _taskenums = __webpack_require__(402);
 
-var _xhriopool = __webpack_require__(457);
+var _xhriopool = __webpack_require__(442);
 
-var _reference = __webpack_require__(423);
+var _reference = __webpack_require__(404);
 
-var _service = __webpack_require__(458);
+var _service = __webpack_require__(443);
 
-var _app = __webpack_require__(382);
+var _app = __webpack_require__(167);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -6543,7 +6210,7 @@ registerStorage(_app2.default);
 
 /***/ },
 
-/***/ 446:
+/***/ 431:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6558,7 +6225,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.async = async;
 
-var _promise_external = __webpack_require__(242);
+var _promise_external = __webpack_require__(109);
 
 var promiseimpl = _interopRequireWildcard(_promise_external);
 
@@ -6602,7 +6269,7 @@ function async(f) {
 
 /***/ },
 
-/***/ 447:
+/***/ 432:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6619,25 +6286,25 @@ exports.AuthWrapper = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _constants = __webpack_require__(397);
+var _constants = __webpack_require__(240);
 
 var constants = _interopRequireWildcard(_constants);
 
-var _error2 = __webpack_require__(167);
+var _error2 = __webpack_require__(84);
 
 var errorsExports = _interopRequireWildcard(_error2);
 
-var _failrequest = __webpack_require__(449);
+var _failrequest = __webpack_require__(434);
 
-var _location = __webpack_require__(398);
+var _location = __webpack_require__(241);
 
-var _promise_external = __webpack_require__(242);
+var _promise_external = __webpack_require__(109);
 
 var promiseimpl = _interopRequireWildcard(_promise_external);
 
-var _requestmap = __webpack_require__(455);
+var _requestmap = __webpack_require__(440);
 
-var _type = __webpack_require__(107);
+var _type = __webpack_require__(56);
 
 var type = _interopRequireWildcard(_type);
 
@@ -6785,7 +6452,7 @@ var AuthWrapper = exports.AuthWrapper = function () {
 
 /***/ },
 
-/***/ 448:
+/***/ 433:
 /***/ function(module, exports) {
 
 "use strict";
@@ -6918,7 +6585,7 @@ function stop(id) {
 
 /***/ },
 
-/***/ 449:
+/***/ 434:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6935,7 +6602,7 @@ exports.FailRequest = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _promise_external = __webpack_require__(242);
+var _promise_external = __webpack_require__(109);
 
 var promiseimpl = _interopRequireWildcard(_promise_external);
 
@@ -6978,7 +6645,7 @@ var FailRequest = exports.FailRequest = function () {
 
 /***/ },
 
-/***/ 450:
+/***/ 435:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6994,7 +6661,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.getBlob = getBlob;
 exports.sliceBlob = sliceBlob;
 
-var _type = __webpack_require__(107);
+var _type = __webpack_require__(56);
 
 var type = _interopRequireWildcard(_type);
 
@@ -7060,7 +6727,7 @@ function sliceBlob(blob, start, end) {
 
 /***/ },
 
-/***/ 451:
+/***/ 436:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7075,7 +6742,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.jsonObjectOrNull = jsonObjectOrNull;
 
-var _type = __webpack_require__(107);
+var _type = __webpack_require__(56);
 
 var type = _interopRequireWildcard(_type);
 
@@ -7117,7 +6784,7 @@ function jsonObjectOrNull(s) {
 
 /***/ },
 
-/***/ 452:
+/***/ 437:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7132,7 +6799,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Observer = undefined;
 
-var _type = __webpack_require__(107);
+var _type = __webpack_require__(56);
 
 var type = _interopRequireWildcard(_type);
 
@@ -7178,7 +6845,7 @@ var Observer = exports.Observer = function Observer(nextOrObserver, opt_error, o
 
 /***/ },
 
-/***/ 453:
+/***/ 438:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7218,35 +6885,35 @@ exports.addAuthHeader_ = addAuthHeader_;
 exports.addVersionHeader_ = addVersionHeader_;
 exports.makeRequest = makeRequest;
 
-var _array = __webpack_require__(402);
+var _array = __webpack_require__(373);
 
 var array = _interopRequireWildcard(_array);
 
-var _backoff = __webpack_require__(448);
+var _backoff = __webpack_require__(433);
 
 var backoff = _interopRequireWildcard(_backoff);
 
-var _error = __webpack_require__(167);
+var _error = __webpack_require__(84);
 
 var errorsExports = _interopRequireWildcard(_error);
 
-var _object = __webpack_require__(381);
+var _object = __webpack_require__(162);
 
 var object = _interopRequireWildcard(_object);
 
-var _promise_external = __webpack_require__(242);
+var _promise_external = __webpack_require__(109);
 
 var promiseimpl = _interopRequireWildcard(_promise_external);
 
-var _type = __webpack_require__(107);
+var _type = __webpack_require__(56);
 
 var type = _interopRequireWildcard(_type);
 
-var _url = __webpack_require__(405);
+var _url = __webpack_require__(376);
 
 var UrlUtils = _interopRequireWildcard(_url);
 
-var _xhrio = __webpack_require__(422);
+var _xhrio = __webpack_require__(403);
 
 var XhrIoExports = _interopRequireWildcard(_xhrio);
 
@@ -7452,7 +7119,7 @@ function makeRequest(requestInfo, authToken, pool) {
 
 /***/ },
 
-/***/ 454:
+/***/ 439:
 /***/ function(module, exports) {
 
 "use strict";
@@ -7500,7 +7167,7 @@ handler, timeout) {
 
 /***/ },
 
-/***/ 455:
+/***/ 440:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7532,11 +7199,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
 
 
-var _object = __webpack_require__(381);
+var _object = __webpack_require__(162);
 
 var object = _interopRequireWildcard(_object);
 
-var _constants = __webpack_require__(397);
+var _constants = __webpack_require__(240);
 
 var constants = _interopRequireWildcard(_constants);
 
@@ -7596,7 +7263,7 @@ var RequestMap = exports.RequestMap = function () {
 
 /***/ },
 
-/***/ 456:
+/***/ 441:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7628,23 +7295,23 @@ var _createClass = function () { function defineProperties(target, props) { for 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
 
 
-var _error = __webpack_require__(167);
+var _error = __webpack_require__(84);
 
 var errorsExports = _interopRequireWildcard(_error);
 
-var _object = __webpack_require__(381);
+var _object = __webpack_require__(162);
 
 var object = _interopRequireWildcard(_object);
 
-var _promise_external = __webpack_require__(242);
+var _promise_external = __webpack_require__(109);
 
 var promiseimpl = _interopRequireWildcard(_promise_external);
 
-var _type = __webpack_require__(107);
+var _type = __webpack_require__(56);
 
 var type = _interopRequireWildcard(_type);
 
-var _xhrio = __webpack_require__(422);
+var _xhrio = __webpack_require__(403);
 
 var XhrIoExports = _interopRequireWildcard(_xhrio);
 
@@ -7796,7 +7463,7 @@ var NetworkXhrIo = exports.NetworkXhrIo = function () {
 
 /***/ },
 
-/***/ 457:
+/***/ 442:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7828,7 +7495,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
 
 
-var _xhrio_network = __webpack_require__(456);
+var _xhrio_network = __webpack_require__(441);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -7854,7 +7521,7 @@ var XhrIoPool = exports.XhrIoPool = function () {
 
 /***/ },
 
-/***/ 458:
+/***/ 443:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7886,23 +7553,23 @@ var _createClass = function () { function defineProperties(target, props) { for 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
 
 
-var _args = __webpack_require__(401);
+var _args = __webpack_require__(372);
 
 var args = _interopRequireWildcard(_args);
 
-var _authwrapper = __webpack_require__(447);
+var _authwrapper = __webpack_require__(432);
 
-var _location = __webpack_require__(398);
+var _location = __webpack_require__(241);
 
-var _promise_external = __webpack_require__(242);
+var _promise_external = __webpack_require__(109);
 
 var fbsPromiseImpl = _interopRequireWildcard(_promise_external);
 
-var _request = __webpack_require__(453);
+var _request = __webpack_require__(438);
 
 var RequestExports = _interopRequireWildcard(_request);
 
-var _reference = __webpack_require__(423);
+var _reference = __webpack_require__(404);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -8046,7 +7713,7 @@ var ServiceInternals = exports.ServiceInternals = function () {
 
 /***/ },
 
-/***/ 459:
+/***/ 444:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8081,37 +7748,37 @@ var _createClass = function () { function defineProperties(target, props) { for 
  */
 
 
-var _taskenums = __webpack_require__(421);
+var _taskenums = __webpack_require__(402);
 
 var fbsTaskEnums = _interopRequireWildcard(_taskenums);
 
-var _observer = __webpack_require__(452);
+var _observer = __webpack_require__(437);
 
-var _tasksnapshot = __webpack_require__(460);
+var _tasksnapshot = __webpack_require__(445);
 
-var _args = __webpack_require__(401);
+var _args = __webpack_require__(372);
 
 var fbsArgs = _interopRequireWildcard(_args);
 
-var _array = __webpack_require__(402);
+var _array = __webpack_require__(373);
 
 var fbsArray = _interopRequireWildcard(_array);
 
-var _async = __webpack_require__(446);
+var _async = __webpack_require__(431);
 
-var _error = __webpack_require__(167);
+var _error = __webpack_require__(84);
 
 var errors = _interopRequireWildcard(_error);
 
-var _promise_external = __webpack_require__(242);
+var _promise_external = __webpack_require__(109);
 
 var fbsPromiseimpl = _interopRequireWildcard(_promise_external);
 
-var _requests = __webpack_require__(420);
+var _requests = __webpack_require__(401);
 
 var fbsRequests = _interopRequireWildcard(_requests);
 
-var _type = __webpack_require__(107);
+var _type = __webpack_require__(56);
 
 var typeUtils = _interopRequireWildcard(_type);
 
@@ -8690,7 +8357,7 @@ var UploadTask = exports.UploadTask = function () {
 
 /***/ },
 
-/***/ 460:
+/***/ 445:
 /***/ function(module, exports) {
 
 "use strict";
@@ -8743,7 +8410,7 @@ var UploadTaskSnapshot = exports.UploadTaskSnapshot = function () {
 
 /***/ },
 
-/***/ 483:
+/***/ 487:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8753,7 +8420,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _firebase = __webpack_require__(428);
+var _firebase = __webpack_require__(418);
 
 var _firebase2 = _interopRequireDefault(_firebase);
 
@@ -8770,6 +8437,339 @@ var config = {
 };
 _firebase2.default.initializeApp(config);
 exports.default = fire;
+
+/***/ },
+
+/***/ 56:
+/***/ function(module, exports) {
+
+"use strict";
+/*! @license Firebase v4.1.3
+Build: rev-1234895
+Terms: https://firebase.google.com/terms/ */
+
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+exports.isDef = isDef;
+exports.isJustDef = isJustDef;
+exports.isFunction = isFunction;
+exports.isObject = isObject;
+exports.isNonNullObject = isNonNullObject;
+exports.isNonArrayObject = isNonArrayObject;
+exports.isString = isString;
+exports.isNumber = isNumber;
+exports.isNativeBlob = isNativeBlob;
+exports.isNativeBlobDefined = isNativeBlobDefined;
+/**
+* Copyright 2017 Google Inc.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*   http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/**
+ * @return False if the object is undefined or null, true otherwise.
+ */
+/**
+* Copyright 2017 Google Inc.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*   http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/function isDef(p) {
+    return p != null;
+}
+function isJustDef(p) {
+    return p !== void 0;
+}
+function isFunction(p) {
+    return typeof p === 'function';
+}
+function isObject(p) {
+    return (typeof p === 'undefined' ? 'undefined' : _typeof(p)) === 'object';
+}
+function isNonNullObject(p) {
+    return isObject(p) && p !== null;
+}
+function isNonArrayObject(p) {
+    return isObject(p) && !Array.isArray(p);
+}
+function isString(p) {
+    return typeof p === 'string' || p instanceof String;
+}
+function isNumber(p) {
+    return typeof p === 'number' || p instanceof Number;
+}
+function isNativeBlob(p) {
+    return isNativeBlobDefined() && p instanceof Blob;
+}
+function isNativeBlobDefined() {
+    return typeof Blob !== 'undefined';
+}
+//# sourceMappingURL=type.js.map
+
+
+/***/ },
+
+/***/ 84:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/*! @license Firebase v4.1.3
+Build: rev-1234895
+Terms: https://firebase.google.com/terms/ */
+
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Code = exports.errors = exports.FirebaseStorageError = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * Copyright 2017 Google Inc.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * Licensed under the Apache License, Version 2.0 (the "License");
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * you may not use this file except in compliance with the License.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * You may obtain a copy of the License at
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     *   http://www.apache.org/licenses/LICENSE-2.0
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * Unless required by applicable law or agreed to in writing, software
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * distributed under the License is distributed on an "AS IS" BASIS,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * See the License for the specific language governing permissions and
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * limitations under the License.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     */
+
+
+exports.prependCode = prependCode;
+exports.unknown = unknown;
+exports.objectNotFound = objectNotFound;
+exports.bucketNotFound = bucketNotFound;
+exports.projectNotFound = projectNotFound;
+exports.quotaExceeded = quotaExceeded;
+exports.unauthenticated = unauthenticated;
+exports.unauthorized = unauthorized;
+exports.retryLimitExceeded = retryLimitExceeded;
+exports.invalidChecksum = invalidChecksum;
+exports.canceled = canceled;
+exports.invalidEventName = invalidEventName;
+exports.invalidUrl = invalidUrl;
+exports.invalidDefaultBucket = invalidDefaultBucket;
+exports.noDefaultBucket = noDefaultBucket;
+exports.cannotSliceBlob = cannotSliceBlob;
+exports.serverFileWrongSize = serverFileWrongSize;
+exports.noDownloadURL = noDownloadURL;
+exports.invalidArgument = invalidArgument;
+exports.invalidArgumentCount = invalidArgumentCount;
+exports.appDeleted = appDeleted;
+exports.invalidRootOperation = invalidRootOperation;
+exports.invalidFormat = invalidFormat;
+exports.internalError = internalError;
+
+var _constants = __webpack_require__(240);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var FirebaseStorageError = exports.FirebaseStorageError = function () {
+    function FirebaseStorageError(code, message) {
+        _classCallCheck(this, FirebaseStorageError);
+
+        this.code_ = prependCode(code);
+        this.message_ = 'Firebase Storage: ' + message;
+        this.serverResponse_ = null;
+        this.name_ = 'FirebaseError';
+    }
+
+    _createClass(FirebaseStorageError, [{
+        key: 'codeProp',
+        value: function codeProp() {
+            return this.code;
+        }
+    }, {
+        key: 'codeEquals',
+        value: function codeEquals(code) {
+            return prependCode(code) === this.codeProp();
+        }
+    }, {
+        key: 'serverResponseProp',
+        value: function serverResponseProp() {
+            return this.serverResponse_;
+        }
+    }, {
+        key: 'setServerResponseProp',
+        value: function setServerResponseProp(serverResponse) {
+            this.serverResponse_ = serverResponse;
+        }
+    }, {
+        key: 'name',
+        get: function get() {
+            return this.name_;
+        }
+    }, {
+        key: 'code',
+        get: function get() {
+            return this.code_;
+        }
+    }, {
+        key: 'message',
+        get: function get() {
+            return this.message_;
+        }
+    }, {
+        key: 'serverResponse',
+        get: function get() {
+            return this.serverResponse_;
+        }
+    }]);
+
+    return FirebaseStorageError;
+}();
+
+var errors = exports.errors = {};
+var Code = exports.Code = {
+    // Shared between all platforms
+    UNKNOWN: 'unknown',
+    OBJECT_NOT_FOUND: 'object-not-found',
+    BUCKET_NOT_FOUND: 'bucket-not-found',
+    PROJECT_NOT_FOUND: 'project-not-found',
+    QUOTA_EXCEEDED: 'quota-exceeded',
+    UNAUTHENTICATED: 'unauthenticated',
+    UNAUTHORIZED: 'unauthorized',
+    RETRY_LIMIT_EXCEEDED: 'retry-limit-exceeded',
+    INVALID_CHECKSUM: 'invalid-checksum',
+    CANCELED: 'canceled',
+    // JS specific
+    INVALID_EVENT_NAME: 'invalid-event-name',
+    INVALID_URL: 'invalid-url',
+    INVALID_DEFAULT_BUCKET: 'invalid-default-bucket',
+    NO_DEFAULT_BUCKET: 'no-default-bucket',
+    CANNOT_SLICE_BLOB: 'cannot-slice-blob',
+    SERVER_FILE_WRONG_SIZE: 'server-file-wrong-size',
+    NO_DOWNLOAD_URL: 'no-download-url',
+    INVALID_ARGUMENT: 'invalid-argument',
+    INVALID_ARGUMENT_COUNT: 'invalid-argument-count',
+    APP_DELETED: 'app-deleted',
+    INVALID_ROOT_OPERATION: 'invalid-root-operation',
+    INVALID_FORMAT: 'invalid-format',
+    INTERNAL_ERROR: 'internal-error'
+};
+function prependCode(code) {
+    return 'storage/' + code;
+}
+function unknown() {
+    return new FirebaseStorageError(Code.UNKNOWN, 'An unknown error occurred, please check the error payload for ' + 'server response.');
+}
+function objectNotFound(path) {
+    return new FirebaseStorageError(Code.OBJECT_NOT_FOUND, 'Object \'' + path + '\' does not exist.');
+}
+function bucketNotFound(bucket) {
+    return new FirebaseStorageError(Code.BUCKET_NOT_FOUND, 'Bucket \'' + bucket + '\' does not exist.');
+}
+function projectNotFound(project) {
+    return new FirebaseStorageError(Code.PROJECT_NOT_FOUND, 'Project \'' + project + '\' does not exist.');
+}
+function quotaExceeded(bucket) {
+    return new FirebaseStorageError(Code.QUOTA_EXCEEDED, 'Quota for bucket \'' + bucket + '\' exceeded, please view quota on ' + 'https://firebase.google.com/pricing/.');
+}
+function unauthenticated() {
+    return new FirebaseStorageError(Code.UNAUTHENTICATED, 'User is not authenticated, please authenticate using Firebase ' + 'Authentication and try again.');
+}
+function unauthorized(path) {
+    return new FirebaseStorageError(Code.UNAUTHORIZED, 'User does not have permission to access \'' + path + '\'.');
+}
+function retryLimitExceeded() {
+    return new FirebaseStorageError(Code.RETRY_LIMIT_EXCEEDED, 'Max retry time for operation exceeded, please try again.');
+}
+function invalidChecksum(path, checksum, calculated) {
+    return new FirebaseStorageError(Code.INVALID_CHECKSUM, 'Uploaded/downloaded object \'' + path + '\' has checksum \'' + checksum + '\' which does not match \'' + calculated + '\'. Please retry the upload/download.');
+}
+function canceled() {
+    return new FirebaseStorageError(Code.CANCELED, 'User canceled the upload/download.');
+}
+function invalidEventName(name) {
+    return new FirebaseStorageError(Code.INVALID_EVENT_NAME, 'Invalid event name \'' + name + '\'.');
+}
+function invalidUrl(url) {
+    return new FirebaseStorageError(Code.INVALID_URL, 'Invalid URL \'' + url + '\'.');
+}
+function invalidDefaultBucket(bucket) {
+    return new FirebaseStorageError(Code.INVALID_DEFAULT_BUCKET, 'Invalid default bucket \'' + bucket + '\'.');
+}
+function noDefaultBucket() {
+    return new FirebaseStorageError(Code.NO_DEFAULT_BUCKET, 'No default bucket ' + 'found. Did you set the \'' + _constants.configOption + '\' property when initializing the app?');
+}
+function cannotSliceBlob() {
+    return new FirebaseStorageError(Code.CANNOT_SLICE_BLOB, 'Cannot slice blob for upload. Please retry the upload.');
+}
+function serverFileWrongSize() {
+    return new FirebaseStorageError(Code.SERVER_FILE_WRONG_SIZE, 'Server recorded incorrect upload file size, please retry the upload.');
+}
+function noDownloadURL() {
+    return new FirebaseStorageError(Code.NO_DOWNLOAD_URL, 'The given file does not have any download URLs.');
+}
+function invalidArgument(index, fnName, message) {
+    return new FirebaseStorageError(Code.INVALID_ARGUMENT, 'Invalid argument in `' + fnName + '` at index ' + index + ': ' + message);
+}
+function invalidArgumentCount(argMin, argMax, fnName, real) {
+    var countPart = void 0;
+    var plural = void 0;
+    if (argMin === argMax) {
+        countPart = argMin;
+        plural = argMin === 1 ? 'argument' : 'arguments';
+    } else {
+        countPart = 'between ' + argMin + ' and ' + argMax;
+        plural = 'arguments';
+    }
+    return new FirebaseStorageError(Code.INVALID_ARGUMENT_COUNT, 'Invalid argument count in `' + fnName + '`: Expected ' + countPart + ' ' + plural + ', received ' + real + '.');
+}
+function appDeleted() {
+    return new FirebaseStorageError(Code.APP_DELETED, 'The Firebase app was deleted.');
+}
+/**
+ * @param name The name of the operation that was invalid.
+ */
+function invalidRootOperation(name) {
+    return new FirebaseStorageError(Code.INVALID_ROOT_OPERATION, 'The operation \'' + name + '\' cannot be performed on a root reference, create a non-root ' + 'reference using child, such as .child(\'file.png\').');
+}
+/**
+ * @param format The format that was not valid.
+ * @param message A message describing the format violation.
+ */
+function invalidFormat(format, message) {
+    return new FirebaseStorageError(Code.INVALID_FORMAT, 'String does not match format \'' + format + '\': ' + message);
+}
+/**
+ * @param message A message describing the internal error.
+ */
+function internalError(message) {
+    throw new FirebaseStorageError(Code.INTERNAL_ERROR, 'Internal error: ' + message);
+}
+//# sourceMappingURL=error.js.map
+
 
 /***/ }
 

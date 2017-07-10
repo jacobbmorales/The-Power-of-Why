@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Firebase from 'firebase';
+import fire from '../js/fire.bundle.js';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Slider from 'material-ui/Slider';
@@ -24,31 +26,19 @@ class Answer extends React.Component {
         this.handleSlider = this.handleSlider.bind(this);
     }
 
-    getData() {
-        $.ajax({
-            type: "GET",
-            url: 'https://power-of-why.firebaseio.com/general/1/question'
-            data: {'cause_name': event.target.value},
-            success: function (data) {
-                this.setState({
-                    question: data
-                });
-            }.bind(this)
-        });
-    }
-
     handleSlider(event, value) {
+        this.setState({
+            question: ref.fire.database().ref('general')
+        });
+
         this.setState({slider: value});
         if (this.state.slider == 0) {
-            getData();
             this.setState({answer: this.state.question});
         }
         else if (this.state.slider == .2) {
-            getData();
             this.setState({answer: this.state.question});
         }
         else if (this.state.slider == .4) {
-            getData();
             this.setState({answer: this.state.question});
         }
         else if (this.state.slider == .6) {
