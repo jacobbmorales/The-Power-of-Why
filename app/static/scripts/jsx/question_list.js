@@ -35,7 +35,7 @@ class Questions extends React.Component {
                         />
                         <CardActions>
                             <List>
-                                <ListItem primaryText="Why is the sky blue?"/>
+                                <ListItem primaryText="Why is the sky blue?" href="/answer"/>
                                 <ListItem primaryText="Holder"/>
                                 <ListItem primaryText="Holder"/>
                                 <ListItem primaryText="Holder"/>

@@ -12,49 +12,75 @@ const muiTheme = getMuiTheme({
         primary3Color: indigo100,
     },
 });
-const min = 0;
-const max = Math.pow(10, 6);
-const power = 12;
-
-function transform(value) {
-    return Math.round((Math.exp(power * value / max) - 1) / (Math.exp(power) - 1) * max);
-}
-
-function reverse(value) {
-    return (1 / power) * Math.log(((Math.exp(power) - 1) * value / max) + 1) * max;
-}
 
 class Answer extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {slider: 0};
+        this.state = {
+            slider: 0,
+            question: ''
+        }
+        this.state.answer = "Nuclear fusion in the sun produces huge amounts of energy"
         this.handleSlider = this.handleSlider.bind(this);
     }
 
-  handleSlider(event, value){
-    this.setState({slider: transform(value)});
-  };
+    getData() {
+        $.ajax({
+            type: "GET",
+            url: 'https://power-of-why.firebaseio.com/general/1/question'
+            data: {'cause_name': event.target.value},
+            success: function (data) {
+                this.setState({
+                    question: data
+                });
+            }.bind(this)
+        });
+    }
 
-render()
-{
-    return (
-        <div>
-            <MuiThemeProvider muiTheme={muiTheme}>
-                <div>
-                <Slider
-                    step={0.20}
-                    value={reverse(this.state.slider)}
-                    onChange={this.handleSlider}
-                />
-                <p>
-                    <span>{'The value of this slider is: '}</span>
-                    <span>{this.state.slider}</span>
-                </p>
+    handleSlider(event, value) {
+        this.setState({slider: value});
+        if (this.state.slider == 0) {
+            getData();
+            this.setState({answer: this.state.question});
+        }
+        else if (this.state.slider == .2) {
+            getData();
+            this.setState({answer: this.state.question});
+        }
+        else if (this.state.slider == .4) {
+            getData();
+            this.setState({answer: this.state.question});
+        }
+        else if (this.state.slider == .6) {
+            this.setState({answer: "and they travel in straight lines unless they hit something."});
+        }
+        else if (this.state.slider == .8) {
+            this.setState({answer: "The sky looks blue because the photons coming from the sky must have been scattered"});
+        }
+        else if (this.state.slider == 1) {
+            this.setState({answer: " and photons that look blue scatter more than others."});
+        }
+
+    };
+
+    render() {
+        return (
+            <div>
+                <MuiThemeProvider muiTheme={muiTheme}>
+                    <div>
+                        <Slider
+                            step={0.20}
+                            value={this.state.slider}
+                            onChange={this.handleSlider}
+                        />
+                        <p>
+                            <span>{this.state.answer}</span>
+                        </p>
                     </div>
-            </MuiThemeProvider>
-        </div>
-    );
-}
+                </MuiThemeProvider>
+            </div>
+        );
+    }
 }
 
 export default Answer;

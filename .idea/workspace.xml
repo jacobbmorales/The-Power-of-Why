@@ -2,19 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78561b53-6bff-46d2-b4ce-c812139aac5c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/scripts/jsx/answer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/scripts/jsx/navbar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/scripts/jsx/suggestion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/answer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/general_knowledge.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/history.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/science.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/sports.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/suggestion.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database.rules.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/power-of-why-export.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/static/scripts/jsx/fire.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/scripts/js/questions.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/web/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/web/database-rules.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/web/firebase-messaging-sw.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/web/firebase.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/web/functions/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/web/functions/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/web/images/firebase-logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/web/images/profile_placeholder.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/web/manifest.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/web/manifest.webapp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/web/scripts/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/web/storage.rules" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/web/styles/main.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.py" afterPath="$PROJECT_DIR$/app/app.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/scripts/js/answer.bundle.js" afterPath="$PROJECT_DIR$/app/static/scripts/js/answer.bundle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/scripts/js/main.bundle.js" afterPath="$PROJECT_DIR$/app/static/scripts/js/main.bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/scripts/jsx/main.js" afterPath="$PROJECT_DIR$/app/static/scripts/jsx/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/scripts/js/navbar.bundle.js" afterPath="$PROJECT_DIR$/app/static/scripts/js/navbar.bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/scripts/js/question_list.bundle.js" afterPath="$PROJECT_DIR$/app/static/scripts/js/question_list.bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/scripts/js/suggestion.bundle.js" afterPath="$PROJECT_DIR$/app/static/scripts/js/suggestion.bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/scripts/jsx/answer.js" afterPath="$PROJECT_DIR$/app/static/scripts/jsx/answer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/scripts/jsx/question_list.js" afterPath="$PROJECT_DIR$/app/static/scripts/jsx/question_list.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/index.html" afterPath="$PROJECT_DIR$/app/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
@@ -51,41 +63,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="suggestion.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/suggestion.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="history.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/history.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+            <state relative-caret-position="136">
+              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fire.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/static/scripts/jsx/fire.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -94,8 +86,8 @@
       <file leaf-file-name="answer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/static/scripts/jsx/answer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+            <state relative-caret-position="204">
+              <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -103,14 +95,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="question_list.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/static/scripts/jsx/question_list.js">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="-153">
+              <caret line="3" column="74" selection-start-line="3" selection-start-column="74" selection-end-line="3" selection-end-column="74" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1499656043794" expanded="true" signature="585:941" ph="{&quot;babel-core&quot;: &quot;^6.25.0&quot;...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/static/scripts/jsx/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -118,8 +120,28 @@
       <file leaf-file-name="answer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/answer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+            <state relative-caret-position="238">
+              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="24" column="19" selection-start-line="17" selection-start-column="0" selection-end-line="26" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="power-of-why-export.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/power-of-why-export.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -131,8 +153,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -157,19 +179,24 @@
         <option value="$PROJECT_DIR$/app/static/scripts/js/main.bundle.js" />
         <option value="$PROJECT_DIR$/app/web/index.html" />
         <option value="$PROJECT_DIR$/app/web/scripts/main.js" />
-        <option value="$PROJECT_DIR$/app/templates/index.html" />
         <option value="$PROJECT_DIR$/app/static/scripts/jsx/navbar.js" />
         <option value="$PROJECT_DIR$/app/static/scripts/jsx/main.js" />
         <option value="$PROJECT_DIR$/app/static/scripts/jsx/suggestion.js" />
         <option value="$PROJECT_DIR$/app/static/scripts/jsx/questions.js" />
         <option value="$PROJECT_DIR$/app/templates/suggestion.html" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/app/app.py" />
         <option value="$PROJECT_DIR$/app/templates/history.html" />
         <option value="$PROJECT_DIR$/app/templates/science.html" />
         <option value="$PROJECT_DIR$/app/templates/sports.html" />
         <option value="$PROJECT_DIR$/app/templates/general_knowledge.html" />
+        <option value="$PROJECT_DIR$/app/static/scripts/jsx/question_list.js" />
+        <option value="$PROJECT_DIR$/app/templates/index.html" />
+        <option value="$PROJECT_DIR$/app/power-of-why-export.json" />
+        <option value="$PROJECT_DIR$/app/database.rules.json" />
         <option value="$PROJECT_DIR$/app/templates/answer.html" />
+        <option value="$PROJECT_DIR$/app/fire.js" />
+        <option value="$PROJECT_DIR$/app/static/scripts/jsx/fire.js" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/app/static/scripts/jsx/answer.js" />
       </list>
     </option>
@@ -262,42 +289,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="The-Power-of-Why" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="The-Power-of-Why" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="The-Power-of-Why" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="The-Power-of-Why" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -336,12 +327,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The-Power-of-Why" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="The-Power-of-Why" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -349,12 +358,15 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jacob\Dropbox\The-Power-of-Why\app" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jacob\Dropbox\The-Power-of-Why\app\static\scripts\jsx" />
       <recent name="C:\Users\jacob\Dropbox\The-Power-of-Why\app\static" />
       <recent name="C:\Users\jacob\Dropbox\The-Power-of-Why\app\templates" />
       <recent name="C:\Users\jacob\Dropbox\The-Power-of-Why\app" />
       <recent name="C:\Users\jacob\Dropbox\The-Power-of-Why\app\static\scripts" />
-      <recent name="C:\Users\jacob\Dropbox\The-Power-of-Why\app\jsx" />
     </key>
   </component>
   <component name="RunManager" selected="Python.app (1)">
@@ -660,9 +672,9 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1830161" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329653" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32492113" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329653" sideWeight="0.49707174" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32492113" sideWeight="0.49707174" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.49121523" order="2" side_tool="false" content_ui="tabs" />
@@ -723,7 +735,7 @@
         <state relative-caret-position="561">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <marker date="1499267755195" expanded="true" signature="585:915" ph="{&quot;babel-core&quot;: &quot;^6.25.0&quot;...}" />
+            <marker date="1499656043794" expanded="true" signature="585:941" ph="{&quot;babel-core&quot;: &quot;^6.25.0&quot;...}" />
           </folding>
         </state>
       </provider>
@@ -807,18 +819,18 @@
           <caret line="35887" column="12" selection-start-line="35887" selection-start-column="12" selection-end-line="35887" selection-end-column="12" />
           <folding>
             <element signature="e#368#376#0" expanded="false" />
-            <marker date="1499631215679" expanded="true" signature="209:895" ph="{...}" />
-            <marker date="1499631215679" expanded="true" signature="483:568" ph="{&quot;i&quot;: moduleId...}" />
-            <marker date="1499631215679" expanded="true" signature="1459:1560" ph="{&quot;get&quot;: getter...}" />
-            <marker date="1499631215679" expanded="true" signature="1718:1992" ph="{...}" />
-            <marker date="1499631215679" expanded="true" signature="2182:2190" ph="/*...*/" />
-            <marker date="1499631215679" expanded="true" signature="2228:2236" ph="/*...*/" />
-            <marker date="1499631215679" expanded="true" signature="2275:2283" ph="/*...*/" />
-            <marker date="1499631215679" expanded="true" signature="2325:2333" ph="/*...*/" />
-            <marker date="1499631215679" expanded="true" signature="1165561:1165567" ph="{...}" />
-            <marker date="1499631215679" expanded="true" signature="1165561:1165707" ph="{...}" />
-            <marker date="1499631215679" expanded="true" signature="1165561:1165718" ph="[...]" />
-            <marker date="1499631215679" expanded="true" signature="1165708:1165716" ph="/*...*/" />
+            <marker date="1499657988341" expanded="true" signature="209:895" ph="{...}" />
+            <marker date="1499657988341" expanded="true" signature="483:568" ph="{&quot;i&quot;: moduleId...}" />
+            <marker date="1499657988341" expanded="true" signature="1459:1560" ph="{&quot;get&quot;: getter...}" />
+            <marker date="1499657988341" expanded="true" signature="1718:1992" ph="{...}" />
+            <marker date="1499657988341" expanded="true" signature="2182:2190" ph="/*...*/" />
+            <marker date="1499657988341" expanded="true" signature="2228:2236" ph="/*...*/" />
+            <marker date="1499657988341" expanded="true" signature="2275:2283" ph="/*...*/" />
+            <marker date="1499657988341" expanded="true" signature="2325:2333" ph="/*...*/" />
+            <marker date="1499657988341" expanded="true" signature="1166146:1166152" ph="{...}" />
+            <marker date="1499657988341" expanded="true" signature="1166146:1166292" ph="{...}" />
+            <marker date="1499657988341" expanded="true" signature="1166146:1166303" ph="[...]" />
+            <marker date="1499657988341" expanded="true" signature="1166293:1166301" ph="/*...*/" />
           </folding>
         </state>
       </provider>
@@ -855,16 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88">
-          <caret line="3" column="74" selection-start-line="3" selection-start-column="74" selection-end-line="3" selection-end-column="74" />
-          <folding>
-            <marker date="1499267755195" expanded="true" signature="585:915" ph="{&quot;babel-core&quot;: &quot;^6.25.0&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/static/web/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -893,16 +895,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
           <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/scripts/jsx/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
           <folding>
             <element signature="e#0#26#0" expanded="false" />
           </folding>
@@ -943,18 +935,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="74" selection-start-line="9" selection-start-column="74" selection-end-line="9" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/science.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="91" selection-start-line="11" selection-start-column="91" selection-end-line="11" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/scripts/jsx/question_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="37" column="90" selection-start-line="37" selection-start-column="90" selection-end-line="37" selection-end-column="90" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/history.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -967,44 +969,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/answer.html">
+    <entry file="file://$USER_HOME$/Downloads/power-of-why-export.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        <state relative-caret-position="187">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/history.html">
+    <entry file="file://$PROJECT_DIR$/app/database.rules.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="85">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/scripts/jsx/question_list.js">
+    <entry file="file://$PROJECT_DIR$/app/power-of-why-export.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="24" column="19" selection-start-line="17" selection-start-column="0" selection-end-line="26" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/scripts/jsx/fire.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="3" column="74" selection-start-line="3" selection-start-column="74" selection-end-line="3" selection-end-column="74" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1499656043794" expanded="true" signature="585:941" ph="{&quot;babel-core&quot;: &quot;^6.25.0&quot;...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/scripts/js/fire.bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-146905">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/scripts/jsx/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/answer.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/scripts/jsx/answer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+        <state relative-caret-position="204">
+          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

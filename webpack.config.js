@@ -1,16 +1,4 @@
 var webpack = require('webpack');
-//var firebase = require("firebase/app");
-//require("firebase/auth");
-//require("firebase/database");
-//var config = {
-//    apiKey: "AIzaSyAoMDi3nrfpQgE3rtbptQF4vLVSzd-GE-4",
-//    authDomain: "power-of-why.firebaseapp.com",
-//    databaseURL: "https://power-of-why.firebaseio.com",
- //   projectId: "power-of-why",
-//    storageBucket: "power-of-why.appspot.com",
-//    messagingSenderId: "90138298651"
-//};
-//firebase.initializeApp(config);
 module.exports = {
     entry: {
         main: "./app/static/scripts/jsx/main.js",
@@ -18,6 +6,7 @@ module.exports = {
         navbar: "./app/static/scripts/jsx/navbar.js",
         question_list: "./app/static/scripts/jsx/question_list.js",
         answer: "./app/static/scripts/jsx/answer.js",
+        fire: "./app/static/scripts/jsx/fire.js",
     },
     output: {
         path: "./app/static/scripts/js",
