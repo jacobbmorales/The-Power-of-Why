@@ -24,9 +24,11 @@ var config = {
 };
 firebase.initializeApp(config);
 // Import Admin SDK
-var admin = require("firebase")
+var key = answer_key;
+var link = 'general/' + key;
+var admin = require("firebase");
 var db = admin.database();
-var ref = db.ref("general/1");
+var ref = db.ref(link);
 // Attach an asynchronous callback to read the data at our posts reference
 
 class Answer extends React.Component {

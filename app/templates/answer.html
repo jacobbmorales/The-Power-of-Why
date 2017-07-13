@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Why is the sky blue?</title>
+    <title>The Power of Why</title>
 </head>
 <body>
 <div id="navbar"></div>
-    <div id="answer"></div>
-    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='scripts/js/answer.bundle.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='scripts/js/navbar.bundle.js') }}"></script>
+<div id="answer"></div>
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script>
+    var answer_key = "{{ key }}";
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename='scripts/js/answer.bundle.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='scripts/js/navbar.bundle.js') }}"></script>
 </body>
 </html>

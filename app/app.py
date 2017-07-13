@@ -32,9 +32,10 @@ def history():
 def general_knowledge():
     return render_template('general_knowledge.html')
 
-@app.route('/answer')
-def answer():
-    return render_template('answer.html')
+@app.route('/answer/<int:key>', methods=['GET'])
+def answer(key):
+    key = key;
+    return render_template('answer.html', key=key)
 
 if __name__ == '__main__':
     app.run(debug=True)
