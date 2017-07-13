@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Firebase from 'firebase';
-import fire from '../js/fire.bundle.js';
+import * as firebase from 'firebase'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Slider from 'material-ui/Slider';
@@ -15,41 +14,71 @@ const muiTheme = getMuiTheme({
     },
 });
 
+var config = {
+    apiKey: "AIzaSyAoMDi3nrfpQgE3rtbptQF4vLVSzd-GE-4",
+    authDomain: "power-of-why.firebaseapp.com",
+    databaseURL: "https://power-of-why.firebaseio.com/",
+    projectId: "power-of-why",
+    storageBucket: "power-of-why.appspot.com",
+    messagingSenderId: "90138298651"
+};
+firebase.initializeApp(config);
+// Import Admin SDK
+var admin = require("firebase")
+var db = admin.database();
+var ref = db.ref("general/1");
+// Attach an asynchronous callback to read the data at our posts reference
+
 class Answer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             slider: 0,
-            question: ''
-        }
-        this.state.answer = "Nuclear fusion in the sun produces huge amounts of energy"
+            question: '',
+            answer: '',
+            one: '',
+            two: '',
+            three: '',
+            four: '',
+            five: '',
+            six: ''
+        };
+        ref.on("value", function (snapshot) {
+            this.setState({question: snapshot.val().question});
+            this.setState({answer: snapshot.val().one});
+            this.setState({one: snapshot.val().one});
+            this.setState({two: snapshot.val().two});
+            this.setState({three: snapshot.val().three});
+            this.setState({four: snapshot.val().four});
+            this.setState({five: snapshot.val().five});
+            this.setState({six: snapshot.val().six});
+        }.bind(this), function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+        });
         this.handleSlider = this.handleSlider.bind(this);
     }
 
-    handleSlider(event, value) {
-        this.setState({
-            question: ref.fire.database().ref('general')
-        });
 
+    handleSlider(event, value) {
+        if (value == 0) {
+            this.setState({answer: this.state.one});
+        }
+        else if (value == .2) {
+            this.setState({answer: this.state.two});
+        }
+        else if (value == .4) {
+            this.setState({answer: this.state.three});
+        }
+        else if (value == .6) {
+            this.setState({answer: this.state.four});
+        }
+        else if (value == .8) {
+            this.setState({answer: this.state.five});
+        }
+        else if (value == 1) {
+            this.setState({answer: this.state.six});
+        }
         this.setState({slider: value});
-        if (this.state.slider == 0) {
-            this.setState({answer: this.state.question});
-        }
-        else if (this.state.slider == .2) {
-            this.setState({answer: this.state.question});
-        }
-        else if (this.state.slider == .4) {
-            this.setState({answer: this.state.question});
-        }
-        else if (this.state.slider == .6) {
-            this.setState({answer: "and they travel in straight lines unless they hit something."});
-        }
-        else if (this.state.slider == .8) {
-            this.setState({answer: "The sky looks blue because the photons coming from the sky must have been scattered"});
-        }
-        else if (this.state.slider == 1) {
-            this.setState({answer: " and photons that look blue scatter more than others."});
-        }
 
     };
 
@@ -58,6 +87,9 @@ class Answer extends React.Component {
             <div>
                 <MuiThemeProvider muiTheme={muiTheme}>
                     <div>
+                        <p>
+                            <span>{this.state.question}</span>
+                        </p>
                         <Slider
                             step={0.20}
                             value={this.state.slider}

@@ -1,5 +1,6 @@
 var webpack = require('webpack');
-var $ = require ('jquery')
+var $ = require('jquery')
+var firebase = require('firebase')
 module.exports = {
     entry: {
         main: "./app/static/scripts/jsx/main.js",
@@ -7,7 +8,6 @@ module.exports = {
         navbar: "./app/static/scripts/jsx/navbar.js",
         question_list: "./app/static/scripts/jsx/question_list.js",
         answer: "./app/static/scripts/jsx/answer.js",
-        fire: "./app/static/scripts/jsx/fire.js",
     },
     output: {
         path: "./app/static/scripts/js",
@@ -17,11 +17,11 @@ module.exports = {
         loaders: [
             {
                 test: /\.js?$/,
+                exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
                     presets: ['es2015', 'react']
-                },
-                exclude: /node_modules/
+                }
             }
         ]
     },
