@@ -26,6 +26,7 @@ const Topics = () => (
         <FlatButton label="Sports" style={buttonStyle} href="/sports"/>
         <FlatButton label="History" style={buttonStyle} href="/history"/>
         <FlatButton label="General Knowledge" style={buttonStyle} href="/general_knowledge"/>
+        <FlatButton label="Admin Panel" style={buttonStyle} href="/admin"/>
     </div>
 );
 

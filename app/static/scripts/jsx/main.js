@@ -23,6 +23,7 @@ const Main = () => (
             />
             <CardActions>
                 <FlatButton label="Add" href="/suggestion"/>
+                <FlatButton label="Admin Sign In" href="/admin"/>
             </CardActions>
         </Card>
     </MuiThemeProvider>

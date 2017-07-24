@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-
+from firebase import firebase
 app = Flask(__name__)
 
 
@@ -12,30 +12,25 @@ def index():
 def suggestion():
     return render_template('suggestion.html')
 
+@app.route('/admin/suggestion/<string:key>')
+def admin_suggestion(key):
+    key=key
+    return render_template('admin_suggestion.html', key=key)
 
-@app.route('/science')
-def science():
-    return render_template('science.html')
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
 
+@app.route('/<string:type>', methods=['GET'])
+def question(type):
+    type = type;
+    return render_template('question.html', type=type)
 
-@app.route('/sports')
-def sports():
-    return render_template('sports.html')
-
-
-@app.route('/history')
-def history():
-    return render_template('history.html')
-
-
-@app.route('/general_knowledge')
-def general_knowledge():
-    return render_template('general_knowledge.html')
-
-@app.route('/answer/<int:key>', methods=['GET'])
-def answer(key):
+@app.route('/<string:type>/answer/<string:key>', methods=['GET'])
+def answer(type,key):
+    type = type;
     key = key;
-    return render_template('answer.html', key=key)
+    return render_template('answer.html', key=key, type=type)
 
 if __name__ == '__main__':
     app.run(debug=True)
