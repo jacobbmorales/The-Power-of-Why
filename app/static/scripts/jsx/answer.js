@@ -25,7 +25,8 @@ var config = {
 firebase.initializeApp(config);
 // Import Admin SDK
 var key = answer_key;
-var link = 'general/' + key;
+var type = question_type;
+var link = type + '/' + key;
 var admin = require("firebase");
 var db = admin.database();
 var ref = db.ref(link);

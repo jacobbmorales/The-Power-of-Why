@@ -25,9 +25,10 @@ var config = {
 };
 firebase.initializeApp(config);
 // Import Admin SDK
-var admin = require("firebase")
+var type = question_type;
+var admin = require("firebase");
 var db = admin.database();
-var ref = db.ref('general');
+var ref = db.ref(type);
 
 class Questions extends React.Component {
     constructor(props) {
@@ -52,7 +53,6 @@ class Questions extends React.Component {
 
     render() {
         var questions = this.state.questions;
-        console.log(questions)
         return (
             <div>
                 <MuiThemeProvider muiTheme={muiTheme}>
@@ -62,7 +62,7 @@ class Questions extends React.Component {
                             <ListItem
                                 key = {question.key}
                                 primaryText={question.value}
-                                href={'/answer/'+ question.key}
+                                href={type + '/answer/'+ question.key}
                             />
                         ))}
                     </List>
