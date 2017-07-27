@@ -4,13 +4,12 @@ import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {indigo500, indigo700, indigo100, indigo900, white, grey400, darkWhite} from 'material-ui/styles/colors';
-
+import {red500, indigo700, indigo100, indigo900, white, grey400, darkWhite} from 'material-ui/styles/colors';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 const muiTheme = getMuiTheme({
     palette: {
-        primary1Color: indigo500,
-        primary2Color: indigo700,
-        primary3Color: indigo100,
+        primary1Color: red500,
     },
 });
 
@@ -25,15 +24,21 @@ const Topics = () => (
         <FlatButton label="Science" style={buttonStyle} href="/science"/>
         <FlatButton label="Sports" style={buttonStyle} href="/sports"/>
         <FlatButton label="History" style={buttonStyle} href="/history"/>
-        <FlatButton label="General Knowledge" style={buttonStyle} href="/general_knowledge"/>
+        <FlatButton label="General Knowledge" style={buttonStyle} href="/general"/>
         <FlatButton label="Admin Panel" style={buttonStyle} href="/admin"/>
+    </div>
+);
+
+const Title = () => (
+    <div>
+        <FlatButton label="The Power of Why" style={buttonStyle} href="/"/>
     </div>
 );
 
 const Navbar = () => (
     <MuiThemeProvider muiTheme={muiTheme}>
         <AppBar
-            title="The Power of Why"
+            iconElementLeft={<Title/>}
             iconElementRight={<Topics/>}
         />
     </MuiThemeProvider>

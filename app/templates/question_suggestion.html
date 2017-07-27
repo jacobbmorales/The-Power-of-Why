@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>The Power of Why</title>
+    <title>Add a question</title>
 </head>
 <body>
 <div id="navbar"></div>
@@ -11,17 +11,13 @@
     <div class='margin'>
         <div class="text">
             <center>
-                <h1 style="text-transform: uppercase">{{ type }} questions</h1>
+                <h1 style="text-transform: uppercase">Suggest a Question for Review</h1>
             </center>
         </div>
-        <div id="questions"></div>
+        <div id="question_suggestion"></div>
     </div>
 </div>
-
-<script>
-    var question_type = "{{ type }}";
-</script>
-<script type="text/javascript" src="{{ url_for('static', filename='scripts/js/question_list.bundle.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='scripts/js/question_suggestion.bundle.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='scripts/js/navbar.bundle.js') }}"></script>
 </body>
 </html>

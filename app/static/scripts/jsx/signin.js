@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import * as firebase from 'firebase'
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Divider from 'material-ui/Divider';
 import {indigo500, indigo700, indigo100, indigo900, white, grey400, darkWhite} from 'material-ui/styles/colors';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 const muiTheme = getMuiTheme({
     palette: {
@@ -41,7 +43,6 @@ class Signin extends React.Component {
         this.handleUser = this.handleUser.bind(this);
         this.handlePassword = this.handlePassword.bind(this);
         this.handleSignIn = this.handleSignIn.bind(this);
-        injectTapEventPlugin();
     }
 
     handleUser(event) {
@@ -82,25 +83,27 @@ class Signin extends React.Component {
             <div>
                 <MuiThemeProvider muiTheme={muiTheme}>
                     <Card>
-                        <CardHeader
-                            title="Admin Sign In"
-                        />
-                        <CardActions>
-                            <TextField
-                                hintText="Username"
-                                value={this.state.user}
-                                onChange={this.handleUser}
-                            />
-                            <br />
-                            <TextField
-                                hintText="Password"
-                                type="password"
-                                value={this.state.password}
-                                onChange={this.handlePassword}
-                            />
-                            <br />
-                            <FlatButton label="Sign In" onClick={this.handleSignIn}/>
-                        </CardActions>
+                        <div>
+                            <center>
+                                <CardActions>
+                                    <TextField
+                                        hintText="Username"
+                                        value={this.state.user}
+                                        onChange={this.handleUser}
+                                    />
+                                    <br />
+                                    <TextField
+                                        hintText="Password"
+                                        type="password"
+                                        value={this.state.password}
+                                        onChange={this.handlePassword}
+                                    />
+                                    <br />
+                                    <RaisedButton label="Sign In" onClick={this.handleSignIn}/>
+                                    <RaisedButton label="Home" href={"/"}/>
+                                </CardActions>
+                            </center>
+                        </div>
                     </Card>
                 </MuiThemeProvider>
             </div>

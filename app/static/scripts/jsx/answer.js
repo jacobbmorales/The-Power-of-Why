@@ -3,16 +3,25 @@ import ReactDOM from 'react-dom';
 import * as firebase from 'firebase'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Divider from 'material-ui/Divider';
 import Slider from 'material-ui/Slider';
-import {indigo500, indigo700, indigo100, indigo900, white, grey400, darkWhite} from 'material-ui/styles/colors';
+import {red500, indigo700, indigo100, indigo900, white, grey400, darkWhite, blue900} from 'material-ui/styles/colors';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 const muiTheme = getMuiTheme({
     palette: {
-        primary1Color: indigo500,
+        primary1Color: blue900,
         primary2Color: indigo700,
         primary3Color: indigo100,
     },
 });
+
+var sliderStyle = {
+    backgroundColor: darkWhite,
+    color: grey400,
+};
+
 
 var config = {
     apiKey: "AIzaSyAoMDi3nrfpQgE3rtbptQF4vLVSzd-GE-4",
@@ -86,21 +95,30 @@ class Answer extends React.Component {
     };
 
     render() {
+        var type = question_type;
         return (
             <div>
                 <MuiThemeProvider muiTheme={muiTheme}>
                     <div>
-                        <p>
-                            <span>{this.state.question}</span>
-                        </p>
-                        <Slider
-                            step={0.20}
-                            value={this.state.slider}
-                            onChange={this.handleSlider}
-                        />
-                        <p>
-                            <span>{this.state.answer}</span>
-                        </p>
+                        <center>
+                            <p>
+                                <span>{this.state.question}</span>
+                            </p>
+                            <Divider/>
+                            <p>
+                                <span style={sliderStyle}>Use the slider to discover a deeper answer.</span>
+                            </p>
+                            <Slider
+                                step={0.20}
+                                value={this.state.slider}
+                                onChange={this.handleSlider}
+                                sliderStyle={sliderStyle}
+                            />
+                            <Divider/>
+                            <p>
+                                <span>{this.state.answer}</span>
+                            </p>
+                        </center>
                     </div>
                 </MuiThemeProvider>
             </div>

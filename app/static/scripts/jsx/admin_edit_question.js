@@ -2,25 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as firebase from 'firebase'
 import {List, ListItem} from 'material-ui/List';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import Divider from 'material-ui/Divider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {red500, white, grey400, darkWhite, blue900} from 'material-ui/styles/colors';
+import {red500, indigo700, indigo100, blue900, white, grey400, darkWhite} from 'material-ui/styles/colors';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 const muiTheme = getMuiTheme({
     palette: {
         primary1Color: blue900,
+        primary2Color: indigo700,
+        primary3Color: indigo100,
     },
 });
 
 var listStyle = {
     backgroundColor: darkWhite,
     color: blue900,
-    border: red500
 };
 
 var config = {
@@ -38,7 +40,7 @@ var admin = require("firebase");
 var db = admin.database();
 var ref = db.ref(type);
 
-class Questions extends React.Component {
+class Admin_Questions extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -84,11 +86,10 @@ class Questions extends React.Component {
                         <List>
                             {questions.map((question) => (
                                 <div>
-
                                     <ListItem
                                         key={question.key}
                                         primaryText={question.value}
-                                        href={type + '/answer/' + question.key}
+                                        href={'/admin_edit/' + type + '/' + question.key}
                                         style={listStyle}
                                     />
                                     <Divider inset={false}/>
@@ -97,7 +98,7 @@ class Questions extends React.Component {
                         </List>
                         <div>
                             <center>
-                                <RaisedButton label="Home" href={"/"}/>
+                                <RaisedButton label="Back" href={"/admin"}/>
                             </center>
                         </div>
                     </div>
@@ -106,9 +107,10 @@ class Questions extends React.Component {
         )
     }
 }
-export default Questions;
+export default Admin_Questions;
 
 ReactDOM.render(
-    <Questions/>,
-    document.getElementById('questions')
+    <Admin_Questions/>,
+    document.getElementById('admin_edit_questions')
 );
+

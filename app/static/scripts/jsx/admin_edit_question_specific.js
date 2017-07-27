@@ -9,6 +9,7 @@ import {red500, indigo700, indigo100, blue900, white, grey400, darkWhite} from '
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
+
 const styles = {
     errorStyle: {
         color: blue900,
@@ -32,18 +33,19 @@ var config = {
 };
 firebase.initializeApp(config);
 // Import Admin SDK
+var type = question_type;
 var key = answer_key;
-var link = 'admin/' + key;
+var link = type + '/' + key;
 var admin = require("firebase");
 var db = admin.database();
 var ref = db.ref(link);
 // Attach an asynchronous callback to read the data at our posts reference
 
-class Admin_Suggestion extends React.Component {
+class Admin_Question extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            type: '',
+            type: type,
             question: '',
             one: '',
             two: '',
@@ -53,7 +55,6 @@ class Admin_Suggestion extends React.Component {
             six: '',
         };
         ref.on("value", function (snapshot) {
-            this.setState({type: snapshot.val().type});
             this.setState({question: snapshot.val().question});
             this.setState({one: snapshot.val().one});
             this.setState({two: snapshot.val().two});
@@ -73,6 +74,7 @@ class Admin_Suggestion extends React.Component {
         this.handleQuestion = this.handleQuestion.bind(this);
         this.handleType = this.handleType.bind(this);
         this.write = this.write.bind(this);
+        this.delete = this.delete.bind(this);
     }
 
     handleFirst(event) {
@@ -129,7 +131,8 @@ class Admin_Suggestion extends React.Component {
     };
 
     write() {
-        var old = db.ref('admin/' + key);
+        var type = question_type;
+        var old = db.ref(type + '/' + key);
         old.remove();
         var type = this.state.type;
         var ref = db.ref();
@@ -147,7 +150,8 @@ class Admin_Suggestion extends React.Component {
     }
 
     delete() {
-        var old = db.ref('admin/' + key);
+        var type = question_type;
+        var old = db.ref(type + '/' + key);
         old.remove();
     }
 
@@ -191,7 +195,7 @@ class Admin_Suggestion extends React.Component {
                             /><br />
                             <TextField
                                 id="3"
-                                floatingLabelText={this.state.three}
+                                multiLine={true}
                                 errorText="Answer 3"
                                 errorStyle={styles.errorStyle}
                                 value={this.state.three}
@@ -221,10 +225,9 @@ class Admin_Suggestion extends React.Component {
                                 value={this.state.six}
                                 onChange={this.handleSixth}
                             /><br />
-                            <RaisedButton label="Add" onClick={this.write} href={"/admin"}/>
-                            <RaisedButton label="Do not add and remove from suggestion list" onClick={this.delete}
-                                          href={"/admin"}/>
-                            <RaisedButton label="Back" href={"/admin_suggestion"}/>
+                            <RaisedButton label="Publish Edit" onClick={this.write} href={"/admin"}/>
+                            <RaisedButton label="Delete" onClick={this.delete} href={"/admin"}/>
+                            <RaisedButton label="Back" href={"/admin_edit"}/>
                         </center>
                     </div>
                 </MuiThemeProvider>
@@ -235,14 +238,14 @@ class Admin_Suggestion extends React.Component {
 
 export
 default
-Admin_Suggestion;
+Admin_Question;
 
 ReactDOM
     .render(
-        <Admin_Suggestion/>,
+        <Admin_Question/>,
         document
             .getElementById(
-                'admin_suggestion'
+                'admin_edit_question_specific'
             )
     )
 ;

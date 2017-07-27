@@ -33,13 +33,13 @@ var config = {
 firebase.initializeApp(config);
 // Import Admin SDK
 var key = answer_key;
-var link = 'admin/' + key;
+var link = 'question_suggestions/' + key;
 var admin = require("firebase");
 var db = admin.database();
 var ref = db.ref(link);
 // Attach an asynchronous callback to read the data at our posts reference
 
-class Admin_Suggestion extends React.Component {
+class Admin_Question_Suggestion extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -53,14 +53,7 @@ class Admin_Suggestion extends React.Component {
             six: '',
         };
         ref.on("value", function (snapshot) {
-            this.setState({type: snapshot.val().type});
             this.setState({question: snapshot.val().question});
-            this.setState({one: snapshot.val().one});
-            this.setState({two: snapshot.val().two});
-            this.setState({three: snapshot.val().three});
-            this.setState({four: snapshot.val().four});
-            this.setState({five: snapshot.val().five});
-            this.setState({six: snapshot.val().six});
         }.bind(this), function (errorObject) {
             console.log("The read failed: " + errorObject.code);
         });
@@ -129,7 +122,7 @@ class Admin_Suggestion extends React.Component {
     };
 
     write() {
-        var old = db.ref('admin/' + key);
+        var old = db.ref('question_suggestions/' + key);
         old.remove();
         var type = this.state.type;
         var ref = db.ref();
@@ -147,7 +140,7 @@ class Admin_Suggestion extends React.Component {
     }
 
     delete() {
-        var old = db.ref('admin/' + key);
+        var old = db.ref('question_suggestions/' + key);
         old.remove();
     }
 
@@ -191,7 +184,7 @@ class Admin_Suggestion extends React.Component {
                             /><br />
                             <TextField
                                 id="3"
-                                floatingLabelText={this.state.three}
+                                multiLine={true}
                                 errorText="Answer 3"
                                 errorStyle={styles.errorStyle}
                                 value={this.state.three}
@@ -235,14 +228,14 @@ class Admin_Suggestion extends React.Component {
 
 export
 default
-Admin_Suggestion;
+Admin_Question_Suggestion;
 
 ReactDOM
     .render(
-        <Admin_Suggestion/>,
+        <Admin_Question_Suggestion/>,
         document
             .getElementById(
-                'admin_suggestion'
+                'admin_question_suggestion'
             )
     )
 ;

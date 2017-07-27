@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 487);
+/******/ 	return __webpack_require__(__webpack_require__.s = 486);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -43534,8 +43534,7 @@ var passiveOption = exports.passiveOption = function () {
 /* 483 */,
 /* 484 */,
 /* 485 */,
-/* 486 */,
-/* 487 */
+/* 486 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43617,19 +43616,19 @@ var config = {
 firebase.initializeApp(config);
 // Import Admin SDK
 var key = answer_key;
-var link = 'admin/' + key;
+var link = 'question_suggestions/' + key;
 var admin = __webpack_require__(78);
 var db = admin.database();
 var ref = db.ref(link);
 // Attach an asynchronous callback to read the data at our posts reference
 
-var Admin_Suggestion = function (_React$Component) {
-    _inherits(Admin_Suggestion, _React$Component);
+var Admin_Question_Suggestion = function (_React$Component) {
+    _inherits(Admin_Question_Suggestion, _React$Component);
 
-    function Admin_Suggestion(props) {
-        _classCallCheck(this, Admin_Suggestion);
+    function Admin_Question_Suggestion(props) {
+        _classCallCheck(this, Admin_Question_Suggestion);
 
-        var _this = _possibleConstructorReturn(this, (Admin_Suggestion.__proto__ || Object.getPrototypeOf(Admin_Suggestion)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Admin_Question_Suggestion.__proto__ || Object.getPrototypeOf(Admin_Question_Suggestion)).call(this, props));
 
         _this.state = {
             type: '',
@@ -43642,14 +43641,7 @@ var Admin_Suggestion = function (_React$Component) {
             six: ''
         };
         ref.on("value", function (snapshot) {
-            this.setState({ type: snapshot.val().type });
             this.setState({ question: snapshot.val().question });
-            this.setState({ one: snapshot.val().one });
-            this.setState({ two: snapshot.val().two });
-            this.setState({ three: snapshot.val().three });
-            this.setState({ four: snapshot.val().four });
-            this.setState({ five: snapshot.val().five });
-            this.setState({ six: snapshot.val().six });
         }.bind(_this), function (errorObject) {
             console.log("The read failed: " + errorObject.code);
         });
@@ -43665,7 +43657,7 @@ var Admin_Suggestion = function (_React$Component) {
         return _this;
     }
 
-    _createClass(Admin_Suggestion, [{
+    _createClass(Admin_Question_Suggestion, [{
         key: 'handleFirst',
         value: function handleFirst(event) {
             this.setState({
@@ -43724,7 +43716,7 @@ var Admin_Suggestion = function (_React$Component) {
     }, {
         key: 'write',
         value: function write() {
-            var old = db.ref('admin/' + key);
+            var old = db.ref('question_suggestions/' + key);
             old.remove();
             var type = this.state.type;
             var ref = db.ref();
@@ -43743,7 +43735,7 @@ var Admin_Suggestion = function (_React$Component) {
     }, {
         key: 'delete',
         value: function _delete() {
-            var old = db.ref('admin/' + key);
+            var old = db.ref('question_suggestions/' + key);
             old.remove();
         }
     }, {
@@ -43799,7 +43791,7 @@ var Admin_Suggestion = function (_React$Component) {
                             _react2.default.createElement('br', null),
                             _react2.default.createElement(_TextField2.default, {
                                 id: '3',
-                                floatingLabelText: this.state.three,
+                                multiLine: true,
                                 errorText: 'Answer 3',
                                 errorStyle: styles.errorStyle,
                                 value: this.state.three,
@@ -43844,13 +43836,13 @@ var Admin_Suggestion = function (_React$Component) {
         }
     }]);
 
-    return Admin_Suggestion;
+    return Admin_Question_Suggestion;
 }(_react2.default.Component);
 
-exports.default = Admin_Suggestion;
+exports.default = Admin_Question_Suggestion;
 
 
-_reactDom2.default.render(_react2.default.createElement(Admin_Suggestion, null), document.getElementById('admin_suggestion'));
+_reactDom2.default.render(_react2.default.createElement(Admin_Question_Suggestion, null), document.getElementById('admin_question_suggestion'));
 
 /***/ })
 /******/ ]);

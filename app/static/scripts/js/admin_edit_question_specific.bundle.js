@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 487);
+/******/ 	return __webpack_require__(__webpack_require__.s = 483);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -43531,11 +43531,7 @@ var passiveOption = exports.passiveOption = function () {
 /* 480 */,
 /* 481 */,
 /* 482 */,
-/* 483 */,
-/* 484 */,
-/* 485 */,
-/* 486 */,
-/* 487 */
+/* 483 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43616,23 +43612,24 @@ var config = {
 };
 firebase.initializeApp(config);
 // Import Admin SDK
+var type = question_type;
 var key = answer_key;
-var link = 'admin/' + key;
+var link = type + '/' + key;
 var admin = __webpack_require__(78);
 var db = admin.database();
 var ref = db.ref(link);
 // Attach an asynchronous callback to read the data at our posts reference
 
-var Admin_Suggestion = function (_React$Component) {
-    _inherits(Admin_Suggestion, _React$Component);
+var Admin_Question = function (_React$Component) {
+    _inherits(Admin_Question, _React$Component);
 
-    function Admin_Suggestion(props) {
-        _classCallCheck(this, Admin_Suggestion);
+    function Admin_Question(props) {
+        _classCallCheck(this, Admin_Question);
 
-        var _this = _possibleConstructorReturn(this, (Admin_Suggestion.__proto__ || Object.getPrototypeOf(Admin_Suggestion)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Admin_Question.__proto__ || Object.getPrototypeOf(Admin_Question)).call(this, props));
 
         _this.state = {
-            type: '',
+            type: type,
             question: '',
             one: '',
             two: '',
@@ -43642,7 +43639,6 @@ var Admin_Suggestion = function (_React$Component) {
             six: ''
         };
         ref.on("value", function (snapshot) {
-            this.setState({ type: snapshot.val().type });
             this.setState({ question: snapshot.val().question });
             this.setState({ one: snapshot.val().one });
             this.setState({ two: snapshot.val().two });
@@ -43662,10 +43658,11 @@ var Admin_Suggestion = function (_React$Component) {
         _this.handleQuestion = _this.handleQuestion.bind(_this);
         _this.handleType = _this.handleType.bind(_this);
         _this.write = _this.write.bind(_this);
+        _this.delete = _this.delete.bind(_this);
         return _this;
     }
 
-    _createClass(Admin_Suggestion, [{
+    _createClass(Admin_Question, [{
         key: 'handleFirst',
         value: function handleFirst(event) {
             this.setState({
@@ -43724,7 +43721,8 @@ var Admin_Suggestion = function (_React$Component) {
     }, {
         key: 'write',
         value: function write() {
-            var old = db.ref('admin/' + key);
+            var type = question_type;
+            var old = db.ref(type + '/' + key);
             old.remove();
             var type = this.state.type;
             var ref = db.ref();
@@ -43743,7 +43741,8 @@ var Admin_Suggestion = function (_React$Component) {
     }, {
         key: 'delete',
         value: function _delete() {
-            var old = db.ref('admin/' + key);
+            var type = question_type;
+            var old = db.ref(type + '/' + key);
             old.remove();
         }
     }, {
@@ -43799,7 +43798,7 @@ var Admin_Suggestion = function (_React$Component) {
                             _react2.default.createElement('br', null),
                             _react2.default.createElement(_TextField2.default, {
                                 id: '3',
-                                floatingLabelText: this.state.three,
+                                multiLine: true,
                                 errorText: 'Answer 3',
                                 errorStyle: styles.errorStyle,
                                 value: this.state.three,
@@ -43833,10 +43832,9 @@ var Admin_Suggestion = function (_React$Component) {
                                 onChange: this.handleSixth
                             }),
                             _react2.default.createElement('br', null),
-                            _react2.default.createElement(_RaisedButton2.default, { label: 'Add', onClick: this.write, href: "/admin" }),
-                            _react2.default.createElement(_RaisedButton2.default, { label: 'Do not add and remove from suggestion list', onClick: this.delete,
-                                href: "/admin" }),
-                            _react2.default.createElement(_RaisedButton2.default, { label: 'Back', href: "/admin_suggestion" })
+                            _react2.default.createElement(_RaisedButton2.default, { label: 'Publish Edit', onClick: this.write, href: "/admin" }),
+                            _react2.default.createElement(_RaisedButton2.default, { label: 'Delete', onClick: this.delete, href: "/admin" }),
+                            _react2.default.createElement(_RaisedButton2.default, { label: 'Back', href: "/admin_edit" })
                         )
                     )
                 )
@@ -43844,13 +43842,13 @@ var Admin_Suggestion = function (_React$Component) {
         }
     }]);
 
-    return Admin_Suggestion;
+    return Admin_Question;
 }(_react2.default.Component);
 
-exports.default = Admin_Suggestion;
+exports.default = Admin_Question;
 
 
-_reactDom2.default.render(_react2.default.createElement(Admin_Suggestion, null), document.getElementById('admin_suggestion'));
+_reactDom2.default.render(_react2.default.createElement(Admin_Question, null), document.getElementById('admin_edit_question_specific'));
 
 /***/ })
 /******/ ]);

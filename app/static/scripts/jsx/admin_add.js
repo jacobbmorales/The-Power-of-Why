@@ -32,7 +32,7 @@ firebase.initializeApp(config);
 var admin = require("firebase");
 var db = admin.database();
 
-class Suggestion extends React.Component {
+class Admin_Add extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -116,10 +116,9 @@ class Suggestion extends React.Component {
             type = 'general';
         }
         var ref = db.ref();
-        var postsRef = ref.child('admin');
+        var postsRef = ref.child(type);
         var newPostRef = postsRef.push();
         newPostRef.set({
-            type: type,
             question: this.state.question,
             one: this.state.first,
             two: this.state.second,
@@ -137,8 +136,7 @@ class Suggestion extends React.Component {
                 <MuiThemeProvider muiTheme={muiTheme}>
                     <Card>
                         <center>
-                            <CardActions>
-
+                        <CardActions>
                                 <RadioButtonGroup name="category" value={this.state.dropDown}
                                                   onChange={this.handleChange} defaultSelected='1'>
                                     <RadioButton value={1} label="Science"/>
@@ -192,10 +190,9 @@ class Suggestion extends React.Component {
                                     value={this.state.sixth}
                                     onChange={this.handleSixth}
                                 /><br />
-                                <RaisedButton label="Add" onClick={this.write} href="/"/>
-                                <RaisedButton label="Home" href={"/"}/>
-
-                            </CardActions>
+                                <RaisedButton label="Add" onClick={this.write} href="/admin"/>
+                                <RaisedButton label="Back" href={"/admin"}/>
+                        </CardActions>
                         </center>
                     </Card>
                 </MuiThemeProvider>
@@ -204,9 +201,9 @@ class Suggestion extends React.Component {
     }
 }
 
-export default Suggestion;
+export default Admin_Add;
 
 ReactDOM.render(
-    <Suggestion/>,
-    document.getElementById('suggestion')
+    <Admin_Add/>,
+    document.getElementById('admin_add')
 );

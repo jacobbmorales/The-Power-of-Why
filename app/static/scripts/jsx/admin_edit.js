@@ -6,21 +6,17 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {red500, indigo700, indigo100, indigo900, white, grey400, darkWhite} from 'material-ui/styles/colors';
+import {indigo500, indigo700, indigo100, indigo900, white, grey400, darkWhite} from 'material-ui/styles/colors';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
+
 const muiTheme = getMuiTheme({
     palette: {
-        primary1Color: red500,
+        primary1Color: indigo500,
         primary2Color: indigo700,
         primary3Color: indigo100,
     },
 });
-
-var buttonStyle = {
-    backgroundColor: red500,
-    color: red500
-};
 
 var config = {
     apiKey: "AIzaSyAoMDi3nrfpQgE3rtbptQF4vLVSzd-GE-4",
@@ -35,7 +31,7 @@ firebase.initializeApp(config);
 var admin = require("firebase");
 var db = admin.database();
 var ref = db.ref('admin');
-class AdminPanel extends React.Component {
+class AdminEdit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -52,29 +48,29 @@ class AdminPanel extends React.Component {
         return (
             <div>
                 <MuiThemeProvider muiTheme={muiTheme}>
-                    <Card>
+                    <div>
+                        <Card>
+                            <center>
+                                <CardActions>
+                                    <RaisedButton label="Science" href={'/admin_edit/science'}/>
+                                    <RaisedButton label="Sports" href={'/admin_edit/sports'}/>
+                                    <RaisedButton label="Hisory" href={'/admin_edit/history'}/>
+                                    <RaisedButton label="General Knowledge" href={'/admin_edit/general'}/>
+                                </CardActions>
+                            </center>
+                        </Card>
                         <center>
-                            <CardActions>
-                                <RaisedButton label="Edit/Remove Questions" style={buttonStyle}
-                                              href={'/admin_edit'}/>
-                                <RaisedButton label="User Suggestions" style={buttonStyle}
-                                              href={'/admin_suggestion'}/>
-                                <RaisedButton label="Add Content" style={buttonStyle}
-                                              href={'/admin_add'}/>
-                                <RaisedButton label="Sign out" onClick={this.handleSignOut} style={buttonStyle}
-                                              href={'/admin'}/>
-                                <RaisedButton label="Home" href={"/"}/>
-                            </CardActions>
+                            <RaisedButton label="Back" href={"/admin"}/>
                         </center>
-                    </Card>
+                    </div>
                 </MuiThemeProvider>
             </div>
         )
     }
 }
-export default AdminPanel;
+export default AdminEdit;
 
 ReactDOM.render(
-    <AdminPanel/>,
-    document.getElementById('admin_panel')
+    <AdminEdit/>,
+    document.getElementById('admin_edit')
 );
