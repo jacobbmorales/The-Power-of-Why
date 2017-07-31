@@ -1,5 +1,5 @@
 # The Power of Why
-Python 2
+# Python 2
 1. Install pip with 
 
     $ sudo apt-get install python-pip
@@ -10,7 +10,11 @@ Python 2
 
     $ python3 app/app.py
     
-React Front End
+4. The server will be running at 
+
+    http://localhost:5000/
+    
+# React Front End
 1. Install npm 
 
     $ sudo apt-get install npm
