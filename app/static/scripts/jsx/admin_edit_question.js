@@ -35,32 +35,38 @@ var config = {
 };
 firebase.initializeApp(config);
 // Import Admin SDK
-var type = question_type;
 var admin = require("firebase");
 var db = admin.database();
-var ref = db.ref(type);
+var ref = db.ref('current_type/type');
 
 class Admin_Questions extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             questions: [],
-            searchString: ''
+            searchString: '',
+            type: ''
         };
         this.handleSearch = this.handleSearch.bind(this);
         ref.on("value", function (snapshot) {
-            var questions = [];
-            snapshot.forEach(function (childSnapshot) {
-                questions.push({
-                    key: childSnapshot.key,
-                    value: childSnapshot.val().question
+            var type = snapshot.val()
+            this.setState({type: type});
+            var ref1 = db.ref(type);
+            ref1.on("value", function (snapshot) {
+                var questions = [];
+                snapshot.forEach(function (childSnapshot) {
+                    questions.push({
+                        key: childSnapshot.key,
+                        value: childSnapshot.val().question
+                    });
                 });
+                this.setState({questions: questions});
+            }.bind(this), function (errorObject) {
+                console.log("The read failed: " + errorObject.code);
             });
-            this.setState({questions: questions});
         }.bind(this), function (errorObject) {
             console.log("The read failed: " + errorObject.code);
         });
-
     }
 
     handleSearch(event) {
@@ -89,7 +95,7 @@ class Admin_Questions extends React.Component {
                                     <ListItem
                                         key={question.key}
                                         primaryText={question.value}
-                                        href={'/admin_edit/' + type + '/' + question.key}
+                                        href={'/admin_edit/' + this.state.type + '/' + question.key}
                                         style={listStyle}
                                     />
                                     <Divider inset={false}/>

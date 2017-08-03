@@ -21,10 +21,10 @@ var buttonStyle = {
 const Topics = () => (
     <div>
         <FlatButton label="Home" style={buttonStyle} href="/"/>
-        <FlatButton label="Science" style={buttonStyle} href="/science"/>
-        <FlatButton label="Sports" style={buttonStyle} href="/sports"/>
-        <FlatButton label="History" style={buttonStyle} href="/history"/>
-        <FlatButton label="General Knowledge" style={buttonStyle} href="/general"/>
+        <FlatButton label="Science" style={buttonStyle} href="/question/science"/>
+        <FlatButton label="Sports" style={buttonStyle} href="/question/sports"/>
+        <FlatButton label="History" style={buttonStyle} href="/question/history"/>
+        <FlatButton label="General Knowledge" style={buttonStyle} href="/question/general"/>
         <FlatButton label="Admin Panel" style={buttonStyle} href="/admin"/>
     </div>
 );

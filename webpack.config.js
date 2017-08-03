@@ -2,7 +2,8 @@ var webpack = require('webpack');
 var $ = require('jquery');
 var firebase = require('firebase');
 var injectTapEventPlugin = require('react-tap-event-plugin');
-var path = require('path');
+var path = require('path')
+var Joi = require('joi-browser');
 module.exports = {
     entry: {
         admin_add: "./app/static/scripts/jsx/admin_add.js",
@@ -21,6 +22,12 @@ module.exports = {
         suggestion: "./app/static/scripts/jsx/suggestion.js",
         question_suggestion: "./app/static/scripts/jsx/question_suggestion.js",
     },
+    node: {
+        console: false,
+        fs: false,
+        net: false,
+        tls: false
+    },
     output: {
         path: path.join(__dirname, './app/static/scripts/js'),
         filename: "[name].bundle.js",
@@ -35,7 +42,12 @@ module.exports = {
                     presets: ['es2015', 'react']
                 }
             }
-        ]
+        ],
+    },
+    resolve: {
+        alias: {
+            joi: 'joi-browser',
+        }
     },
     plugins: []
 }

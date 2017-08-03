@@ -7,6 +7,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import {red500, indigo700, indigo100, blue900, white, grey400, darkWhite} from 'material-ui/styles/colors';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+
 injectTapEventPlugin();
 
 const styles = {
@@ -32,11 +33,10 @@ var config = {
 };
 firebase.initializeApp(config);
 // Import Admin SDK
-var key = answer_key;
-var link = 'question_suggestions/' + key;
 var admin = require("firebase");
 var db = admin.database();
-var ref = db.ref(link);
+var ref = db.ref('current_type');
+
 // Attach an asynchronous callback to read the data at our posts reference
 
 class Admin_Question_Suggestion extends React.Component {
@@ -53,7 +53,18 @@ class Admin_Question_Suggestion extends React.Component {
             six: '',
         };
         ref.on("value", function (snapshot) {
-            this.setState({question: snapshot.val().question});
+            var question = snapshot.val().question;
+            var link = 'question_suggestions/' + question;
+            var ref1 = db.ref(link);
+            ref1.on("value", function (snapshot) {
+                ref1.on("value", function (snapshot) {
+                    this.setState({question: snapshot.val().question});
+                }.bind(this), function (errorObject) {
+                    console.log("The read failed: " + errorObject.code);
+                });
+            }.bind(this), function (errorObject) {
+                console.log("The read failed: " + errorObject.code);
+            })
         }.bind(this), function (errorObject) {
             console.log("The read failed: " + errorObject.code);
         });
@@ -113,13 +124,15 @@ class Admin_Question_Suggestion extends React.Component {
         this.setState({
             question: event.target.value,
         });
-    };
+    }
+    ;
 
     handleType(event) {
         this.setState({
             type: event.target.value,
         });
-    };
+    }
+    ;
 
     write() {
         var old = db.ref('question_suggestions/' + key);
@@ -157,7 +170,7 @@ class Admin_Question_Suggestion extends React.Component {
                                 errorStyle={styles.errorStyle}
                                 value={this.state.type}
                                 onChange={this.handleType}
-                            /><br />
+                            /><br/>
                             <TextField
                                 id="question"
                                 multiLine={true}
@@ -165,7 +178,7 @@ class Admin_Question_Suggestion extends React.Component {
                                 errorStyle={styles.errorStyle}
                                 value={this.state.question}
                                 onChange={this.handleQuestion}
-                            /><br />
+                            /><br/>
                             <TextField
                                 id="1"
                                 multiLine={true}
@@ -173,7 +186,7 @@ class Admin_Question_Suggestion extends React.Component {
                                 errorStyle={styles.errorStyle}
                                 value={this.state.one}
                                 onChange={this.handleFirst}
-                            /><br />
+                            /><br/>
                             <TextField
                                 id="2"
                                 multiLine={true}
@@ -181,7 +194,7 @@ class Admin_Question_Suggestion extends React.Component {
                                 errorStyle={styles.errorStyle}
                                 value={this.state.two}
                                 onChange={this.handleSecond}
-                            /><br />
+                            /><br/>
                             <TextField
                                 id="3"
                                 multiLine={true}
@@ -189,7 +202,7 @@ class Admin_Question_Suggestion extends React.Component {
                                 errorStyle={styles.errorStyle}
                                 value={this.state.three}
                                 onChange={this.handleThird}
-                            /><br />
+                            /><br/>
                             <TextField
                                 id="4"
                                 multiLine={true}
@@ -197,7 +210,7 @@ class Admin_Question_Suggestion extends React.Component {
                                 errorStyle={styles.errorStyle}
                                 value={this.state.four}
                                 onChange={this.handleFourth}
-                            /><br />
+                            /><br/>
                             <TextField
                                 id="5"
                                 multiLine={true}
@@ -205,7 +218,7 @@ class Admin_Question_Suggestion extends React.Component {
                                 errorStyle={styles.errorStyle}
                                 value={this.state.five}
                                 onChange={this.handleFifth}
-                            /><br />
+                            /><br/>
                             <TextField
                                 id="6"
                                 multiLine={true}
@@ -213,7 +226,7 @@ class Admin_Question_Suggestion extends React.Component {
                                 errorStyle={styles.errorStyle}
                                 value={this.state.six}
                                 onChange={this.handleSixth}
-                            /><br />
+                            /><br/>
                             <RaisedButton label="Add" onClick={this.write} href={"/admin"}/>
                             <RaisedButton label="Do not add and remove from suggestion list" onClick={this.delete}
                                           href={"/admin"}/>
@@ -226,9 +239,7 @@ class Admin_Question_Suggestion extends React.Component {
     }
 }
 
-export
-default
-Admin_Question_Suggestion;
+export default Admin_Question_Suggestion;
 
 ReactDOM
     .render(

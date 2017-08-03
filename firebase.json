@@ -1,0 +1,141 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    "public": "app",
+    "redirects": [
+      {
+        "source": "/style",
+        "destination": "/static/css/style.css",
+        "type": 301
+      },
+      {
+        "source": "/admin_add.bundle.js",
+        "destination": "/static/scripts/js/admin_add.bundle.js",
+        "type": 301
+      },
+      {
+        "source": "/admin_edit.bundle.js",
+        "destination": "/static/scripts/js/admin_edit.bundle.js",
+        "type": 301
+      },
+      {
+        "source": "/admin_edit_question.bundle.js",
+        "destination": "/static/scripts/js/admin_edit_question.bundle.js",
+        "type": 301
+      },
+      {
+        "source": "/admin_edit_question_specific.bundle.js",
+        "destination": "/static/scripts/js/admin_edit_question_specific.bundle.js",
+        "type": 301
+      },
+      {
+        "source": "/admin_panel.bundle.js",
+        "destination": "/static/scripts/js/admin_panel.bundle.js",
+        "type": 301
+      },
+      {
+        "source": "/admin_question_list.bundle.js",
+        "destination": "/static/scripts/js/admin_question_list.bundle.js",
+        "type": 301
+      },
+      {
+        "source": "/admin_question_suggestion.bundle.js",
+        "destination": "/static/scripts/js/admin_question_suggestion.bundle.js",
+        "type": 301
+      },
+      {
+        "source": "/admin_suggestion.bundle.js",
+        "destination": "/static/scripts/js/admin_suggestion.bundle.js",
+        "type": 301
+      },
+      {
+        "source": "/answer.bundle.js",
+        "destination": "/static/scripts/js/answer.bundle.js",
+        "type": 301
+      },
+      {
+        "source": "/navbar.bundle.js",
+        "destination": "/static/scripts/js/navbar.bundle.js",
+        "type": 301
+      },
+      {
+        "source": "/question_list.bundle.js",
+        "destination": "/static/scripts/js/question_list.bundle.js",
+        "type": 301
+      },
+      {
+        "source": "question_suggestion.bundle.js",
+        "destination": "/static/scripts/js/question_suggestion.bundle.js",
+        "type": 301
+      },
+      {
+        "source": "/signin.bundle.js",
+        "destination": "/static/scripts/js/signin.bundle.js",
+        "type": 301
+      },
+      {
+        "source": "/suggestion.bundle.js",
+        "destination": "/static/scripts/js/suggestion.bundle.js",
+        "type": 301
+      },
+      {
+        "source": "/app.bundle.js",
+        "destination": "/static/scripts/js/app.bundle.js",
+        "type": 301
+      }
+
+    ],
+    "rewrites": [
+      {
+        "source": "/admin",
+        "function": "admin"
+      },
+      {
+        "source": "/admin_add",
+        "function": "admin_add"
+      },
+      {
+        "source": "/admin_edit",
+        "function": "admin_edit"
+      },
+
+      {
+        "source": "/admin_edit/*",
+        "function": "admin_edit_question"
+      },
+
+      {
+        "source": "/admin_edit/*/*",
+        "function": "admin_edit_question_specific"
+      },
+      {
+        "source": "/admin_suggestion",
+        "function": "admin_question_list"
+      },
+      {
+        "source": "/admin/question_suggestion/*",
+        "function": "admin_question_suggestion"
+      },
+      {
+        "source": "/admin/suggestion/*",
+        "function": "admin_suggestion"
+      },
+      { "source": "/question/*",
+        "function": "question_list"
+      },
+      { "source": "/question/*/answer/*",
+        "function": "answer"
+      },
+      {
+        "source": "/question_suggestion",
+        "function": "question_suggestion"
+      },
+      {
+        "source": "/suggestion",
+        "function": "suggestion"
+      }
+    ]
+  }
+}

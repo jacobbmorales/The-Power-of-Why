@@ -827,7 +827,7 @@ module.exports = { "default": __webpack_require__(209), __esModule: true };
 
 exports.__esModule = true;
 
-var _defineProperty = __webpack_require__(178);
+var _defineProperty = __webpack_require__(177);
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -918,27 +918,6 @@ exports.default = function (self, call) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-exports.__esModule = true;
-
-exports.default = function (obj, keys) {
-  var target = {};
-
-  for (var i in obj) {
-    if (keys.indexOf(i) >= 0) continue;
-    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
-    target[i] = obj[i];
-  }
-
-  return target;
-};
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -974,6 +953,27 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+exports.default = function (obj, keys) {
+  var target = {};
+
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+
+  return target;
+};
 
 /***/ }),
 /* 16 */
@@ -6274,7 +6274,7 @@ module.exports = escapeTextContentForBrowser;
 
 
 
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 var DOMNamespaces = __webpack_require__(97);
 
 var WHITESPACE_TEST = /^[ \r\n\t\f]/;
@@ -8334,7 +8334,7 @@ module.exports = getEventTarget;
 
 
 
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 
 var useHasFeature;
 if (ExecutionEnvironment.canUseDOM) {
@@ -13015,7 +13015,7 @@ module.exports = getHostComponentFromComposite;
 
 
 
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 
 var contentKey = null;
 
@@ -13372,7 +13372,7 @@ module.exports = isTextInputElement;
 
 
 
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 var escapeTextContentForBrowser = __webpack_require__(69);
 var setInnerHTML = __webpack_require__(70);
 
@@ -14334,7 +14334,7 @@ var _extends2 = __webpack_require__(16);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _objectWithoutProperties2 = __webpack_require__(14);
+var _objectWithoutProperties2 = __webpack_require__(15);
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -15012,6 +15012,18 @@ module.exports = exports['default'];
 /* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = { "default": __webpack_require__(208), __esModule: true };
+
+/***/ }),
+/* 178 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(210), __esModule: true };
+
+/***/ }),
+/* 179 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -15027,18 +15039,6 @@ var _Paper2 = _interopRequireDefault(_Paper);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _Paper2.default;
-
-/***/ }),
-/* 178 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(208), __esModule: true };
-
-/***/ }),
-/* 179 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(210), __esModule: true };
 
 /***/ }),
 /* 180 */
@@ -17560,7 +17560,7 @@ module.exports = { "default": __webpack_require__(213), __esModule: true };
       , linux = !android && !sailfish && !tizen && !webos && /linux/i.test(ua)
       , edgeVersion = getFirstMatch(/edge\/(\d+(\.\d+)?)/i)
       , versionIdentifier = getFirstMatch(/version\/(\d+(\.\d+)?)/i)
-      , tablet = /tablet/i.test(ua)
+      , tablet = /tablet/i.test(ua) && !/tablet pc/i.test(ua)
       , mobile = !tablet && /[^-]mobi/i.test(ua)
       , xbox = /xbox/i.test(ua)
       , result
@@ -20233,7 +20233,7 @@ module.exports = createArrayFromMixed;
 
 /*eslint-disable fb-www/unsafe-html*/
 
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 
 var createArrayFromMixed = __webpack_require__(253);
 var getMarkupWrap = __webpack_require__(255);
@@ -20322,7 +20322,7 @@ module.exports = createNodesFromMarkup;
 
 /*eslint-disable fb-www/unsafe-html */
 
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 
 var invariant = __webpack_require__(1);
 
@@ -20683,7 +20683,7 @@ module.exports = memoizeStringOnly;
 
 
 
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 
 var performance;
 
@@ -21036,7 +21036,7 @@ var alternativeProps = {
   order: 'msFlexOrder',
   flexGrow: 'msFlexPositive',
   flexShrink: 'msFlexNegative',
-  flexBasis: 'msPreferredSize'
+  flexBasis: 'msFlexPreferredSize'
 };
 
 function flexboxIE(property, value, style, _ref) {
@@ -21426,7 +21426,7 @@ var alternativeProps = {
   order: 'msFlexOrder',
   flexGrow: 'msFlexPositive',
   flexShrink: 'msFlexNegative',
-  flexBasis: 'msPreferredSize'
+  flexBasis: 'msFlexPreferredSize'
 };
 
 function flexboxIE(property, value, style) {
@@ -24065,7 +24065,7 @@ var _extends2 = __webpack_require__(16);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _objectWithoutProperties2 = __webpack_require__(14);
+var _objectWithoutProperties2 = __webpack_require__(15);
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -24200,7 +24200,7 @@ var _extends2 = __webpack_require__(16);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _objectWithoutProperties2 = __webpack_require__(14);
+var _objectWithoutProperties2 = __webpack_require__(15);
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -24724,7 +24724,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _keys = __webpack_require__(179);
+var _keys = __webpack_require__(178);
 
 var _keys2 = _interopRequireDefault(_keys);
 
@@ -25077,7 +25077,7 @@ module.exports = AutoFocusUtils;
 
 
 var EventPropagators = __webpack_require__(45);
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 var FallbackCompositionState = __webpack_require__(308);
 var SyntheticCompositionEvent = __webpack_require__(351);
 var SyntheticInputEvent = __webpack_require__(354);
@@ -25466,7 +25466,7 @@ module.exports = BeforeInputEventPlugin;
 
 
 var CSSProperty = __webpack_require__(145);
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 var ReactInstrumentation = __webpack_require__(20);
 
 var camelizeStyleName = __webpack_require__(251);
@@ -25688,7 +25688,7 @@ module.exports = CSSPropertyOperations;
 
 var EventPluginHub = __webpack_require__(44);
 var EventPropagators = __webpack_require__(45);
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 var ReactDOMComponentTree = __webpack_require__(8);
 var ReactUpdates = __webpack_require__(24);
 var SyntheticEvent = __webpack_require__(26);
@@ -26006,7 +26006,7 @@ module.exports = ChangeEventPlugin;
 var _prodInvariant = __webpack_require__(4);
 
 var DOMLazyTree = __webpack_require__(43);
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 
 var createNodesFromMarkup = __webpack_require__(254);
 var emptyFunction = __webpack_require__(19);
@@ -27777,7 +27777,7 @@ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' && typeof __REACT_DEVT
 }
 
 if (process.env.NODE_ENV !== 'production') {
-  var ExecutionEnvironment = __webpack_require__(15);
+  var ExecutionEnvironment = __webpack_require__(14);
   if (ExecutionEnvironment.canUseDOM && window.top === window.self) {
     // First check if devtools is not installed
     if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
@@ -29593,7 +29593,7 @@ module.exports = ReactDOMOption;
 
 
 
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 
 var getNodeForCharacterOffset = __webpack_require__(366);
 var getTextContentAccessor = __webpack_require__(160);
@@ -30408,7 +30408,7 @@ module.exports = ReactDOMUnknownPropertyHook;
 var ReactInvalidSetStateWarningHook = __webpack_require__(336);
 var ReactHostOperationHistoryHook = __webpack_require__(334);
 var ReactComponentTreeHook = __webpack_require__(17);
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 
 var performanceNow = __webpack_require__(264);
 var warning = __webpack_require__(2);
@@ -31000,7 +31000,7 @@ module.exports = ReactEventEmitterMixin;
 var _assign = __webpack_require__(6);
 
 var EventListener = __webpack_require__(137);
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 var PooledClass = __webpack_require__(35);
 var ReactDOMComponentTree = __webpack_require__(8);
 var ReactUpdates = __webpack_require__(24);
@@ -32761,7 +32761,7 @@ module.exports = SVGDOMPropertyConfig;
 
 
 var EventPropagators = __webpack_require__(45);
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 var ReactDOMComponentTree = __webpack_require__(8);
 var ReactInputSelection = __webpack_require__(153);
 var SyntheticEvent = __webpack_require__(26);
@@ -34293,7 +34293,7 @@ module.exports = getNodeForCharacterOffset;
 
 
 
-var ExecutionEnvironment = __webpack_require__(15);
+var ExecutionEnvironment = __webpack_require__(14);
 
 /**
  * Generate a mapping of standard vendor prefixes using the defined style property and event name.
@@ -35892,7 +35892,7 @@ var _extends2 = __webpack_require__(16);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _objectWithoutProperties2 = __webpack_require__(14);
+var _objectWithoutProperties2 = __webpack_require__(15);
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -36050,7 +36050,7 @@ var _extends2 = __webpack_require__(16);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _objectWithoutProperties2 = __webpack_require__(14);
+var _objectWithoutProperties2 = __webpack_require__(15);
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -41227,7 +41227,7 @@ var _extends2 = __webpack_require__(16);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _objectWithoutProperties2 = __webpack_require__(14);
+var _objectWithoutProperties2 = __webpack_require__(15);
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -41273,7 +41273,7 @@ var _EnhancedButton = __webpack_require__(175);
 
 var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 
-var _Paper = __webpack_require__(177);
+var _Paper = __webpack_require__(179);
 
 var _Paper2 = _interopRequireDefault(_Paper);
 
@@ -41963,7 +41963,14 @@ exports.clearImmediate = clearImmediate;
 /* 432 */,
 /* 433 */,
 /* 434 */,
-/* 435 */
+/* 435 */,
+/* 436 */,
+/* 437 */,
+/* 438 */,
+/* 439 */,
+/* 440 */,
+/* 441 */,
+/* 442 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41997,11 +42004,11 @@ var _typeof2 = __webpack_require__(114);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
-var _keys = __webpack_require__(179);
+var _keys = __webpack_require__(178);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _objectWithoutProperties2 = __webpack_require__(14);
+var _objectWithoutProperties2 = __webpack_require__(15);
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -42194,13 +42201,6 @@ exports.default = EventListener;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 436 */,
-/* 437 */,
-/* 438 */,
-/* 439 */,
-/* 440 */,
-/* 441 */,
-/* 442 */,
 /* 443 */,
 /* 444 */,
 /* 445 */,
@@ -42223,7 +42223,7 @@ var _extends2 = __webpack_require__(16);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _objectWithoutProperties2 = __webpack_require__(14);
+var _objectWithoutProperties2 = __webpack_require__(15);
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -42259,7 +42259,7 @@ var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactEventListener = __webpack_require__(435);
+var _reactEventListener = __webpack_require__(442);
 
 var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
@@ -42486,7 +42486,7 @@ var _extends2 = __webpack_require__(16);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _objectWithoutProperties2 = __webpack_require__(14);
+var _objectWithoutProperties2 = __webpack_require__(15);
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -43439,7 +43439,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _defineProperty = __webpack_require__(178);
+var _defineProperty = __webpack_require__(177);
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -43612,12 +43612,9 @@ var config = {
 };
 firebase.initializeApp(config);
 // Import Admin SDK
-var type = question_type;
-var key = answer_key;
-var link = type + '/' + key;
 var admin = __webpack_require__(78);
 var db = admin.database();
-var ref = db.ref(link);
+var ref = db.ref('current_type');
 // Attach an asynchronous callback to read the data at our posts reference
 
 var Admin_Question = function (_React$Component) {
@@ -43629,23 +43626,34 @@ var Admin_Question = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Admin_Question.__proto__ || Object.getPrototypeOf(Admin_Question)).call(this, props));
 
         _this.state = {
-            type: type,
+            type: '',
             question: '',
             one: '',
             two: '',
             three: '',
             four: '',
             five: '',
-            six: ''
+            six: '',
+            key: ''
         };
         ref.on("value", function (snapshot) {
-            this.setState({ question: snapshot.val().question });
-            this.setState({ one: snapshot.val().one });
-            this.setState({ two: snapshot.val().two });
-            this.setState({ three: snapshot.val().three });
-            this.setState({ four: snapshot.val().four });
-            this.setState({ five: snapshot.val().five });
-            this.setState({ six: snapshot.val().six });
+            var type = snapshot.val().type;
+            this.setState({ type: type });
+            var question = snapshot.val().question;
+            this.setState({ key: question });
+            var link = type + '/' + question;
+            var ref1 = db.ref(link);
+            ref1.on("value", function (snapshot) {
+                this.setState({ question: snapshot.val().question });
+                this.setState({ one: snapshot.val().one });
+                this.setState({ two: snapshot.val().two });
+                this.setState({ three: snapshot.val().three });
+                this.setState({ four: snapshot.val().four });
+                this.setState({ five: snapshot.val().five });
+                this.setState({ six: snapshot.val().six });
+            }.bind(this), function (errorObject) {
+                console.log("The read failed: " + errorObject.code);
+            });
         }.bind(_this), function (errorObject) {
             console.log("The read failed: " + errorObject.code);
         });
@@ -43721,8 +43729,7 @@ var Admin_Question = function (_React$Component) {
     }, {
         key: 'write',
         value: function write() {
-            var type = question_type;
-            var old = db.ref(type + '/' + key);
+            var old = db.ref(this.state.type + '/' + this.state.key);
             old.remove();
             var type = this.state.type;
             var ref = db.ref();

@@ -33,19 +33,16 @@ var config = {
 };
 firebase.initializeApp(config);
 // Import Admin SDK
-var type = question_type;
-var key = answer_key;
-var link = type + '/' + key;
 var admin = require("firebase");
 var db = admin.database();
-var ref = db.ref(link);
+var ref = db.ref('current_type');
 // Attach an asynchronous callback to read the data at our posts reference
 
 class Admin_Question extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            type: type,
+            type: '',
             question: '',
             one: '',
             two: '',
@@ -53,15 +50,26 @@ class Admin_Question extends React.Component {
             four: '',
             five: '',
             six: '',
+            key:''
         };
         ref.on("value", function (snapshot) {
-            this.setState({question: snapshot.val().question});
-            this.setState({one: snapshot.val().one});
-            this.setState({two: snapshot.val().two});
-            this.setState({three: snapshot.val().three});
-            this.setState({four: snapshot.val().four});
-            this.setState({five: snapshot.val().five});
-            this.setState({six: snapshot.val().six});
+            var type = snapshot.val().type;
+            this.setState({type:type});
+            var question = snapshot.val().question;
+            this.setState({key:question})
+            var link = type + '/' + question;
+            var ref1 = db.ref(link);
+            ref1.on("value", function (snapshot) {
+                this.setState({question: snapshot.val().question});
+                this.setState({one: snapshot.val().one});
+                this.setState({two: snapshot.val().two});
+                this.setState({three: snapshot.val().three});
+                this.setState({four: snapshot.val().four});
+                this.setState({five: snapshot.val().five});
+                this.setState({six: snapshot.val().six});
+            }.bind(this), function (errorObject) {
+                console.log("The read failed: " + errorObject.code);
+            });
         }.bind(this), function (errorObject) {
             console.log("The read failed: " + errorObject.code);
         });
@@ -131,8 +139,7 @@ class Admin_Question extends React.Component {
     };
 
     write() {
-        var type = question_type;
-        var old = db.ref(type + '/' + key);
+        var old = db.ref(this.state.type + '/' + this.state.key);
         old.remove();
         var type = this.state.type;
         var ref = db.ref();
