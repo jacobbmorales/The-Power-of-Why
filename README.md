@@ -1,18 +1,6 @@
 # The Power of Why
-# Python 2
-1. Install pip with 
-
-    $ sudo apt-get install python-pip
-2. Install the requirements with 
-
-    $ sudo pip3 install -r requirements.txt
-3. Run the server with
-
-    $ python3 app/app.py
-    
-4. The server will be running at 
-
-    http://localhost:5000/
+# Hosted on Firebase
+https://power-of-why.firebaseapp.com/
     
 # React Front End
 1. Install npm 
